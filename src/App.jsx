@@ -6,7 +6,8 @@ import originalScripts from './data/scripts.json';
 import StarBorder from './components/StarBorder';
 import PillNav from './components/PillNav';
 import MagicBento from './components/MagicBento';
-import Ferrofluid from './components/Ferrofluid';
+import Balatro from './components/Balatro';
+import PortfolioMotion from './components/PortfolioMotion';
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
@@ -30,8 +31,6 @@ const featuredIds = [
 ];
 
 const seriesPortalIds = ['tongyoulu', 'maimai'];
-const portfolioFluidColors = ['#4ff5e9', '#4e76d8', '#8a74ff', '#ffad70'];
-
 const coverOverrides = {
   yafobuyu: 'assets/frames/yafobuyu/frame_06.jpg',
   shoudian: 'assets/frames/shoudian/frame_07.jpg',
@@ -550,27 +549,20 @@ function PortfolioStage({ children, paused = false }) {
 
   return (
     <div className="portfolio-stage" ref={stageRef}>
-      <div className="portfolio-ferrofluid-layer" aria-hidden="true">
-        <Ferrofluid
-          className="portfolio-ferrofluid"
-          colors={portfolioFluidColors}
-          backgroundColor="#04070c"
-          speed={isMobile ? 0.12 : 0.2}
-          scale={1.38}
-          turbulence={0.78}
-          fluidity={0.14}
-          rimWidth={0.18}
-          sharpness={3.15}
-          shimmer={0.55}
-          glow={2.1}
-          flowDirection="down"
-          opacity={isMobile ? 0.48 : 0.62}
+      <div className="portfolio-balatro-layer" aria-hidden="true">
+        <Balatro
+          color1="#17376f"
+          color2="#0a7776"
+          color3="#071315"
+          spinRotation={-1.75}
+          spinSpeed={isMobile ? 2.1 : 2.8}
+          spinAmount={0.2}
+          spinEase={0.72}
+          contrast={4.15}
+          lighting={0.24}
+          pixelFilter={isMobile ? 900 : 1750}
+          isRotate
           mouseInteraction={!isMobile}
-          mouseStrength={0.9}
-          mouseRadius={0.46}
-          mouseDampening={0.2}
-          mixBlendMode="screen"
-          dpr={isMobile ? 0.75 : 1}
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
@@ -811,8 +803,10 @@ function Hero({ onPlayShowreel, showreelOpen }) {
 }
 
 function SectionHeading({ index, eyebrow, title, description }) {
+  const displayTitle = eyebrow.split('/')[0].trim();
   return (
     <header className="section-heading">
+      <b className="section-display-title" aria-hidden="true">{displayTitle}</b>
       <div className="section-index">{index}</div>
       <div>
         <span className="eyebrow">{eyebrow}</span>
@@ -2028,6 +2022,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
 }
 
 export default function App() {
+  const appRef = useRef(null);
   const works = (rawData.works || []).map((work) => {
     const episodes = (work.episodes || []).map((episode, index) => ({
       ...episode,
@@ -2077,7 +2072,8 @@ export default function App() {
 
 
   return (
-    <div className="app">
+    <div className="app" ref={appRef}>
+      <PortfolioMotion scopeRef={appRef} />
       <AmbientField />
       <FlowVisibility />
       <Navigation />
