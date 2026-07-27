@@ -1,0 +1,96 @@
+.magic-bento-scope {
+  position: relative;
+}
+
+.magic-bento-spotlight {
+  position: fixed;
+  z-index: 7;
+  width: min(46vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(98,255,245,.13) 0%, rgba(90,145,255,.07) 24%, rgba(126,92,255,.035) 43%, transparent 70%);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  transition: opacity .28s ease;
+  will-change: left, top, opacity;
+}
+
+.magic-bento-card {
+  --magic-color: 79, 245, 233;
+  --magic-x: 50%;
+  --magic-y: 50%;
+  --magic-radius: 280px;
+  --magic-intensity: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.writing .magic-bento-card,
+.about .magic-bento-card { --magic-color: 150, 121, 255; }
+.commercial .magic-bento-card { --magic-color: 255, 177, 115; }
+.experience .magic-bento-card { --magic-color: 113, 181, 255; }
+.strengths .magic-bento-card { --magic-color: 92, 239, 204; }
+
+.magic-bento-glow-layer {
+  position: absolute;
+  z-index: 18;
+  inset: -1px;
+  padding: 1.5px;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    var(--magic-radius) circle at var(--magic-x) var(--magic-y),
+    rgba(var(--magic-color), calc(var(--magic-intensity) * .92)) 0%,
+    rgba(var(--magic-color), calc(var(--magic-intensity) * .48)) 30%,
+    transparent 66%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: .92;
+  filter: drop-shadow(0 0 10px rgba(var(--magic-color), calc(var(--magic-intensity) * .45)));
+  transition: filter .25s ease, opacity .25s ease;
+}
+
+.magic-bento-card.is-magic-active > .magic-bento-glow-layer {
+  opacity: 1;
+  filter: drop-shadow(0 0 17px rgba(var(--magic-color), .58));
+}
+
+.magic-bento-particle {
+  position: absolute;
+  z-index: 20;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgb(var(--magic-color));
+  box-shadow: 0 0 9px rgba(var(--magic-color), .82);
+  animation: magic-bento-particle 1.18s var(--particle-delay, 0ms) cubic-bezier(.16,1,.3,1) both;
+}
+
+.magic-bento-ripple {
+  position: absolute;
+  z-index: 19;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(var(--magic-color), .24), rgba(var(--magic-color), .08) 34%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+@keyframes magic-bento-particle {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+  24% { opacity: 1; transform: translate(calc(-50% + var(--particle-x) * .28), calc(-50% + var(--particle-y) * .28)) scale(1); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--particle-x)), calc(-50% + var(--particle-y))) scale(.25); }
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .magic-bento-spotlight,
+  .magic-bento-particle,
+  .magic-bento-ripple { display: none; }
+  .magic-bento-card { will-change: auto; }
+}

@@ -1,0 +1,1311 @@
+{
+  "generated": "2026-07-18 05:19",
+  "works": [
+    {
+      "id": "tongyoulu",
+      "title": "通幽录",
+      "category": "剧情影像",
+      "sub": "古风 · 悬疑网络剧",
+      "year": "2025",
+      "role": "导演 / 剪辑",
+      "desc": "七集古风悬疑短剧，以江畔古楼、志怪传说为底色，构建一段幽微诡谲的探案叙事。",
+      "color": "#1f6f5c",
+      "color2": "#c2453f",
+      "kind": "video",
+      "frames": [
+        "assets/frames/tongyoulu/ep01/frame_00.jpg"
+      ],
+      "images": [],
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "第1集",
+          "frames": [
+            "assets/frames/tongyoulu/ep01/frame_00.jpg",
+            "assets/frames/tongyoulu/ep01/frame_01.jpg",
+            "assets/frames/tongyoulu/ep01/frame_02.jpg",
+            "assets/frames/tongyoulu/ep01/frame_03.jpg",
+            "assets/frames/tongyoulu/ep01/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 2,
+          "title": "第2集",
+          "frames": [
+            "assets/frames/tongyoulu/ep02/frame_00.jpg",
+            "assets/frames/tongyoulu/ep02/frame_01.jpg",
+            "assets/frames/tongyoulu/ep02/frame_02.jpg",
+            "assets/frames/tongyoulu/ep02/frame_03.jpg",
+            "assets/frames/tongyoulu/ep02/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 3,
+          "title": "第3集 · 江畔古楼",
+          "frames": [
+            "assets/frames/tongyoulu/ep03/frame_00.jpg",
+            "assets/frames/tongyoulu/ep03/frame_01.jpg",
+            "assets/frames/tongyoulu/ep03/frame_02.jpg",
+            "assets/frames/tongyoulu/ep03/frame_03.jpg",
+            "assets/frames/tongyoulu/ep03/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 4,
+          "title": "第4集",
+          "frames": [
+            "assets/frames/tongyoulu/ep04/frame_00.jpg",
+            "assets/frames/tongyoulu/ep04/frame_01.jpg",
+            "assets/frames/tongyoulu/ep04/frame_02.jpg",
+            "assets/frames/tongyoulu/ep04/frame_03.jpg",
+            "assets/frames/tongyoulu/ep04/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 5,
+          "title": "第5集",
+          "frames": [
+            "assets/frames/tongyoulu/ep05/frame_00.jpg",
+            "assets/frames/tongyoulu/ep05/frame_01.jpg",
+            "assets/frames/tongyoulu/ep05/frame_02.jpg",
+            "assets/frames/tongyoulu/ep05/frame_03.jpg",
+            "assets/frames/tongyoulu/ep05/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 6,
+          "title": "第6集",
+          "frames": [
+            "assets/frames/tongyoulu/ep06/frame_00.jpg",
+            "assets/frames/tongyoulu/ep06/frame_01.jpg",
+            "assets/frames/tongyoulu/ep06/frame_02.jpg",
+            "assets/frames/tongyoulu/ep06/frame_03.jpg",
+            "assets/frames/tongyoulu/ep06/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 7,
+          "title": "第7集",
+          "frames": [
+            "assets/frames/tongyoulu/ep07/frame_00.jpg",
+            "assets/frames/tongyoulu/ep07/frame_01.jpg",
+            "assets/frames/tongyoulu/ep07/frame_02.jpg",
+            "assets/frames/tongyoulu/ep07/frame_03.jpg",
+            "assets/frames/tongyoulu/ep07/frame_04.jpg"
+          ]
+        }
+      ],
+      "source_count": 35
+    },
+    {
+      "id": "maimai",
+      "title": "麦麦的魔法面包店",
+      "category": "剧情影像",
+      "sub": "儿童 · 奇幻定格动画",
+      "year": "2025",
+      "role": "导演 / 制作",
+      "desc": "十五集治愈系儿童动画，每一集用一种会魔法的面包，讲一个温柔的小故事。",
+      "color": "#f0a868",
+      "color2": "#7fb685",
+      "kind": "video",
+      "frames": [
+        "assets/frames/maimai/ep01/frame_00.jpg"
+      ],
+      "images": [],
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "第1集 · 小鱼面包",
+          "frames": [
+            "assets/frames/maimai/ep01/frame_00.jpg",
+            "assets/frames/maimai/ep01/frame_01.jpg",
+            "assets/frames/maimai/ep01/frame_02.jpg",
+            "assets/frames/maimai/ep01/frame_03.jpg",
+            "assets/frames/maimai/ep01/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 2,
+          "title": "第2集 · 云朵面包",
+          "frames": [
+            "assets/frames/maimai/ep02/frame_00.jpg",
+            "assets/frames/maimai/ep02/frame_01.jpg",
+            "assets/frames/maimai/ep02/frame_02.jpg",
+            "assets/frames/maimai/ep02/frame_03.jpg",
+            "assets/frames/maimai/ep02/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 3,
+          "title": "第3集 · 太极面包",
+          "frames": [
+            "assets/frames/maimai/ep03/frame_00.jpg",
+            "assets/frames/maimai/ep03/frame_01.jpg",
+            "assets/frames/maimai/ep03/frame_02.jpg",
+            "assets/frames/maimai/ep03/frame_03.jpg",
+            "assets/frames/maimai/ep03/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 4,
+          "title": "第4集 · 泡泡面包",
+          "frames": [
+            "assets/frames/maimai/ep04/frame_00.jpg",
+            "assets/frames/maimai/ep04/frame_01.jpg",
+            "assets/frames/maimai/ep04/frame_02.jpg",
+            "assets/frames/maimai/ep04/frame_03.jpg",
+            "assets/frames/maimai/ep04/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 5,
+          "title": "第5集 · 伸缩面包",
+          "frames": [
+            "assets/frames/maimai/ep05/frame_00.jpg",
+            "assets/frames/maimai/ep05/frame_01.jpg",
+            "assets/frames/maimai/ep05/frame_02.jpg",
+            "assets/frames/maimai/ep05/frame_03.jpg",
+            "assets/frames/maimai/ep05/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 6,
+          "title": "第6集 · 彩虹面包",
+          "frames": [
+            "assets/frames/maimai/ep06/frame_00.jpg",
+            "assets/frames/maimai/ep06/frame_01.jpg",
+            "assets/frames/maimai/ep06/frame_02.jpg",
+            "assets/frames/maimai/ep06/frame_03.jpg",
+            "assets/frames/maimai/ep06/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 7,
+          "title": "第7集 · 绿化面包",
+          "frames": [
+            "assets/frames/maimai/ep07/frame_00.jpg",
+            "assets/frames/maimai/ep07/frame_01.jpg",
+            "assets/frames/maimai/ep07/frame_02.jpg",
+            "assets/frames/maimai/ep07/frame_03.jpg",
+            "assets/frames/maimai/ep07/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 8,
+          "title": "第8集 · 音乐面包",
+          "frames": [
+            "assets/frames/maimai/ep08/frame_00.jpg",
+            "assets/frames/maimai/ep08/frame_01.jpg",
+            "assets/frames/maimai/ep08/frame_02.jpg",
+            "assets/frames/maimai/ep08/frame_03.jpg",
+            "assets/frames/maimai/ep08/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 9,
+          "title": "第9集 · 飞行面包",
+          "frames": [
+            "assets/frames/maimai/ep09/frame_00.jpg",
+            "assets/frames/maimai/ep09/frame_01.jpg",
+            "assets/frames/maimai/ep09/frame_02.jpg",
+            "assets/frames/maimai/ep09/frame_03.jpg",
+            "assets/frames/maimai/ep09/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 10,
+          "title": "第10集 · 弹簧面包",
+          "frames": [
+            "assets/frames/maimai/ep10/frame_00.jpg",
+            "assets/frames/maimai/ep10/frame_01.jpg",
+            "assets/frames/maimai/ep10/frame_02.jpg",
+            "assets/frames/maimai/ep10/frame_03.jpg",
+            "assets/frames/maimai/ep10/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 11,
+          "title": "第11集 · 绘画面包",
+          "frames": [
+            "assets/frames/maimai/ep11/frame_00.jpg",
+            "assets/frames/maimai/ep11/frame_01.jpg",
+            "assets/frames/maimai/ep11/frame_02.jpg",
+            "assets/frames/maimai/ep11/frame_03.jpg",
+            "assets/frames/maimai/ep11/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 12,
+          "title": "第12集 · 好梦面包",
+          "frames": [
+            "assets/frames/maimai/ep12/frame_00.jpg",
+            "assets/frames/maimai/ep12/frame_01.jpg",
+            "assets/frames/maimai/ep12/frame_02.jpg",
+            "assets/frames/maimai/ep12/frame_03.jpg",
+            "assets/frames/maimai/ep12/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 13,
+          "title": "第13集 · 房屋面包",
+          "frames": [
+            "assets/frames/maimai/ep13/frame_00.jpg",
+            "assets/frames/maimai/ep13/frame_01.jpg",
+            "assets/frames/maimai/ep13/frame_02.jpg",
+            "assets/frames/maimai/ep13/frame_03.jpg",
+            "assets/frames/maimai/ep13/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 14,
+          "title": "第14集 · 勇气面包",
+          "frames": [
+            "assets/frames/maimai/ep14/frame_00.jpg",
+            "assets/frames/maimai/ep14/frame_01.jpg",
+            "assets/frames/maimai/ep14/frame_02.jpg",
+            "assets/frames/maimai/ep14/frame_03.jpg",
+            "assets/frames/maimai/ep14/frame_04.jpg"
+          ]
+        },
+        {
+          "ep": 15,
+          "title": "第15集 · 发光面包",
+          "frames": [
+            "assets/frames/maimai/ep15/frame_00.jpg",
+            "assets/frames/maimai/ep15/frame_01.jpg",
+            "assets/frames/maimai/ep15/frame_02.jpg",
+            "assets/frames/maimai/ep15/frame_03.jpg",
+            "assets/frames/maimai/ep15/frame_04.jpg"
+          ]
+        }
+      ],
+      "source_count": 75
+    },
+    {
+      "id": "xindong",
+      "title": "心动策划案",
+      "category": "剧情影像",
+      "sub": "青春 · 爱情短片",
+      "year": "2025",
+      "role": "导演 / 剪辑",
+      "desc": "青春爱情题材短片，围绕一场精心策划的「心动」展开。",
+      "color": "#e8506e",
+      "color2": "#3a2b3f",
+      "kind": "video",
+      "frames": [
+        "assets/frames/xindong/frame_00.jpg",
+        "assets/frames/xindong/frame_01.jpg",
+        "assets/frames/xindong/frame_02.jpg",
+        "assets/frames/xindong/frame_03.jpg",
+        "assets/frames/xindong/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "jinyan",
+      "title": "禁言",
+      "category": "剧情影像",
+      "sub": "剧情短片",
+      "year": "2026",
+      "role": "导演 / 剪辑",
+      "desc": "剧情短片，探讨沉默与表达的边界。",
+      "color": "#4b5d8c",
+      "color2": "#222633",
+      "kind": "video",
+      "frames": [
+        "assets/frames/jinyan/frame_00.jpg",
+        "assets/frames/jinyan/frame_01.jpg",
+        "assets/frames/jinyan/frame_02.jpg",
+        "assets/frames/jinyan/frame_03.jpg",
+        "assets/frames/jinyan/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "mufeng",
+      "title": "牧风",
+      "category": "剧情影像",
+      "sub": "人物 · 剧情短片",
+      "year": "2025",
+      "role": "导演 / 摄影",
+      "desc": "以「风」为意象的人物剧情短片，4K 版本另收录于实验影像。",
+      "color": "#2f9e9e",
+      "color2": "#13343b",
+      "kind": "video",
+      "frames": [
+        "assets/frames/mufeng/frame_00.jpg",
+        "assets/frames/mufeng/frame_01.jpg",
+        "assets/frames/mufeng/frame_02.jpg",
+        "assets/frames/mufeng/frame_03.jpg",
+        "assets/frames/mufeng/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "qishuku",
+      "title": "弃书库的守门人",
+      "category": "实验影像",
+      "sub": "实验 · 志怪短片",
+      "year": "2025",
+      "role": "导演 / 视觉",
+      "desc": "实验性志怪短片，废弃书库里守着秘密的「守门人」。",
+      "color": "#b8862f",
+      "color2": "#3a2c14",
+      "kind": "video",
+      "frames": [
+        "assets/frames/qishuku/frame_00.jpg",
+        "assets/frames/qishuku/frame_01.jpg",
+        "assets/frames/qishuku/frame_02.jpg",
+        "assets/frames/qishuku/frame_03.jpg",
+        "assets/frames/qishuku/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "taoyan",
+      "title": "我最讨厌的人",
+      "category": "实验影像",
+      "sub": "实验 · 剧情短片",
+      "year": "2025",
+      "role": "导演 / 剪辑",
+      "desc": "实验性剧情短片，关于「最讨厌的人」与自我和解。",
+      "color": "#c33b8a",
+      "color2": "#2a1430",
+      "kind": "video",
+      "frames": [
+        "assets/frames/taoyan/frame_00.jpg",
+        "assets/frames/taoyan/frame_01.jpg",
+        "assets/frames/taoyan/frame_02.jpg",
+        "assets/frames/taoyan/frame_03.jpg",
+        "assets/frames/taoyan/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "shancheng",
+      "title": "热血山城",
+      "category": "实验影像",
+      "sub": "城市 · 热血短片",
+      "year": "2025",
+      "role": "导演 / 剪辑",
+      "desc": "以山城重庆为舞台的热血向短片。",
+      "color": "#d6482f",
+      "color2": "#3a140d",
+      "kind": "video",
+      "frames": [
+        "assets/frames/shancheng/frame_00.jpg",
+        "assets/frames/shancheng/frame_01.jpg",
+        "assets/frames/shancheng/frame_02.jpg",
+        "assets/frames/shancheng/frame_03.jpg",
+        "assets/frames/shancheng/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "zoumagang",
+      "title": "走马岗的来历",
+      "category": "实验影像",
+      "sub": "民俗 · 传说短片",
+      "year": "2025",
+      "role": "导演 / 视觉",
+      "desc": "基于民间传说的实验短片，讲述走马岗的由来。",
+      "color": "#5d7a3a",
+      "color2": "#222e14",
+      "kind": "video",
+      "frames": [
+        "assets/frames/zoumagang/frame_00.jpg",
+        "assets/frames/zoumagang/frame_01.jpg",
+        "assets/frames/zoumagang/frame_02.jpg",
+        "assets/frames/zoumagang/frame_03.jpg",
+        "assets/frames/zoumagang/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "dongdeng",
+      "title": "冬等",
+      "category": "纪录影像",
+      "sub": "人文 · 纪录",
+      "year": "2025",
+      "role": "导演 / 摄影",
+      "desc": "人文纪录片，关于等待与冬日里的故事；含拍摄花絮素材。",
+      "color": "#5b7fa6",
+      "color2": "#1c2a3a",
+      "kind": "video",
+      "frames": [
+        "assets/frames/dongdeng/frame_00.jpg",
+        "assets/frames/dongdeng/frame_01.jpg",
+        "assets/frames/dongdeng/frame_02.jpg",
+        "assets/frames/dongdeng/frame_03.jpg",
+        "assets/frames/dongdeng/frame_04.jpg",
+        "assets/frames/dongdeng/frame_05.jpg",
+        "assets/frames/dongdeng/frame_06.jpg",
+        "assets/frames/dongdeng/frame_07.jpg",
+        "assets/frames/dongdeng/frame_08.jpg",
+        "assets/frames/dongdeng/frame_09.jpg",
+        "assets/frames/dongdeng/frame_10.jpg",
+        "assets/frames/dongdeng/frame_11.jpg",
+        "assets/frames/dongdeng/frame_12.jpg",
+        "assets/frames/dongdeng/frame_13.jpg",
+        "assets/frames/dongdeng/frame_14.jpg",
+        "assets/frames/dongdeng/frame_15.jpg",
+        "assets/frames/dongdeng/frame_16.jpg",
+        "assets/frames/dongdeng/frame_17.jpg",
+        "assets/frames/dongdeng/frame_18.jpg",
+        "assets/frames/dongdeng/frame_19.jpg",
+        "assets/frames/dongdeng/frame_20.jpg",
+        "assets/frames/dongdeng/frame_21.jpg",
+        "assets/frames/dongdeng/frame_22.jpg",
+        "assets/frames/dongdeng/frame_23.jpg",
+        "assets/frames/dongdeng/frame_24.jpg",
+        "assets/frames/dongdeng/frame_25.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 26
+    },
+    {
+      "id": "xiayan",
+      "title": "峡砚",
+      "category": "纪录影像",
+      "sub": "非遗 · 纪录",
+      "year": "2025",
+      "role": "导演 / 剪辑",
+      "desc": "非遗主题纪录片，记录峡砚（砚台）制作技艺。另有 8K / 原片版本。",
+      "color": "#6b6f76",
+      "color2": "#23262b",
+      "kind": "video",
+      "frames": [
+        "assets/frames/xiayan/frame_00.jpg",
+        "assets/frames/xiayan/frame_01.jpg",
+        "assets/frames/xiayan/frame_02.jpg",
+        "assets/frames/xiayan/frame_03.jpg",
+        "assets/frames/xiayan/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "douyun",
+      "title": "豆晕",
+      "category": "纪录影像",
+      "sub": "非遗 · 纪录",
+      "year": "2025",
+      "role": "导演 / 摄影",
+      "desc": "非遗主题 4K 纪录片。",
+      "color": "#caa23c",
+      "color2": "#3a2f12",
+      "kind": "video",
+      "frames": [
+        "assets/frames/douyun/frame_00.jpg",
+        "assets/frames/douyun/frame_01.jpg",
+        "assets/frames/douyun/frame_02.jpg",
+        "assets/frames/douyun/frame_03.jpg",
+        "assets/frames/douyun/frame_04.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 5
+    },
+    {
+      "id": "cixiu_video",
+      "title": "刺绣 · 动态",
+      "category": "非遗影像",
+      "sub": "非遗 · 动态影像",
+      "year": "2025",
+      "role": "导演 / 制作",
+      "desc": "刺绣工艺的动态影像记录。",
+      "color": "#1f8a70",
+      "color2": "#0d3b30",
+      "kind": "video",
+      "frames": [
+        "assets/frames/cixiu_video/frame_00.jpg",
+        "assets/frames/cixiu_video/frame_01.jpg",
+        "assets/frames/cixiu_video/frame_02.jpg",
+        "assets/frames/cixiu_video/frame_03.jpg",
+        "assets/frames/cixiu_video/frame_04.jpg",
+        "assets/frames/cixiu_video/frame_05.jpg",
+        "assets/frames/cixiu_video/frame_06.jpg",
+        "assets/frames/cixiu_video/frame_07.jpg",
+        "assets/frames/cixiu_video/frame_08.jpg",
+        "assets/frames/cixiu_video/frame_09.jpg",
+        "assets/frames/cixiu_video/frame_10.jpg",
+        "assets/frames/cixiu_video/frame_11.jpg",
+        "assets/frames/cixiu_video/frame_12.jpg",
+        "assets/frames/cixiu_video/frame_13.jpg",
+        "assets/frames/cixiu_video/frame_14.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 15
+    },
+    {
+      "id": "banhua_video",
+      "title": "非遗版画 · 动态",
+      "category": "非遗影像",
+      "sub": "非遗 · 动态影像",
+      "year": "2025",
+      "role": "导演 / 制作",
+      "desc": "非遗版画的动态影像记录。",
+      "color": "#b8341f",
+      "color2": "#2a0f0a",
+      "kind": "video",
+      "frames": [
+        "assets/frames/banhua_video/frame_00.jpg",
+        "assets/frames/banhua_video/frame_01.jpg",
+        "assets/frames/banhua_video/frame_02.jpg",
+        "assets/frames/banhua_video/frame_03.jpg",
+        "assets/frames/banhua_video/frame_04.jpg",
+        "assets/frames/banhua_video/frame_05.jpg",
+        "assets/frames/banhua_video/frame_06.jpg",
+        "assets/frames/banhua_video/frame_07.jpg",
+        "assets/frames/banhua_video/frame_08.jpg",
+        "assets/frames/banhua_video/frame_09.jpg",
+        "assets/frames/banhua_video/frame_10.jpg",
+        "assets/frames/banhua_video/frame_11.jpg",
+        "assets/frames/banhua_video/frame_12.jpg",
+        "assets/frames/banhua_video/frame_13.jpg",
+        "assets/frames/banhua_video/frame_14.jpg",
+        "assets/frames/banhua_video/frame_15.jpg",
+        "assets/frames/banhua_video/frame_16.jpg",
+        "assets/frames/banhua_video/frame_17.jpg",
+        "assets/frames/banhua_video/frame_18.jpg",
+        "assets/frames/banhua_video/frame_19.jpg",
+        "assets/frames/banhua_video/frame_20.jpg",
+        "assets/frames/banhua_video/frame_21.jpg",
+        "assets/frames/banhua_video/frame_22.jpg",
+        "assets/frames/banhua_video/frame_23.jpg",
+        "assets/frames/banhua_video/frame_24.jpg",
+        "assets/frames/banhua_video/frame_25.jpg",
+        "assets/frames/banhua_video/frame_26.jpg",
+        "assets/frames/banhua_video/frame_27.jpg",
+        "assets/frames/banhua_video/frame_28.jpg",
+        "assets/frames/banhua_video/frame_29.jpg"
+      ],
+      "images": [],
+      "image_captions": [],
+      "source_count": 30
+    },
+    {
+      "id": "img_cixiu",
+      "title": "刺绣",
+      "category": "平面视觉",
+      "sub": "非遗 · 视觉",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "刺绣主题视觉作品。",
+      "color": "#2e8b8b",
+      "color2": "#0e3b3b",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_cixiu/img_000.jpg",
+        "assets/img/img_cixiu/img_001.jpg",
+        "assets/img/img_cixiu/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_ke",
+      "title": "刻",
+      "category": "平面视觉",
+      "sub": "非遗 · 视觉",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "雕刻主题视觉作品。",
+      "color": "#8a6f4a",
+      "color2": "#2e2417",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_ke/img_000.jpg",
+        "assets/img/img_ke/img_001.jpg",
+        "assets/img/img_ke/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_nianhua",
+      "title": "年画",
+      "category": "平面视觉",
+      "sub": "非遗 · 视觉",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "年画主题视觉作品。",
+      "color": "#c0392b",
+      "color2": "#3a120e",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_nianhua/img_000.jpg",
+        "assets/img/img_nianhua/img_001.jpg",
+        "assets/img/img_nianhua/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_muban",
+      "title": "木板年画",
+      "category": "平面视觉",
+      "sub": "非遗 · 视觉",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "木板年画主题视觉作品。",
+      "color": "#a04030",
+      "color2": "#33150f",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_muban/img_000.jpg",
+        "assets/img/img_muban/img_001.jpg",
+        "assets/img/img_muban/img_002.jpg",
+        "assets/img/img_muban/img_003.jpg",
+        "assets/img/img_muban/img_004.jpg",
+        "assets/img/img_muban/img_005.jpg",
+        "assets/img/img_muban/img_006.jpg",
+        "assets/img/img_muban/img_007.jpg",
+        "assets/img/img_muban/img_008.jpg",
+        "assets/img/img_muban/img_009.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 10
+    },
+    {
+      "id": "img_xiu_man",
+      "title": "绣漫画",
+      "category": "平面视觉",
+      "sub": "非遗 · 漫画",
+      "year": "2025",
+      "role": "插画 / 漫画",
+      "desc": "刺绣元素漫画。",
+      "color": "#d2691e",
+      "color2": "#351a08",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_xiu_man/img_000.jpg",
+        "assets/img/img_xiu_man/img_001.jpg",
+        "assets/img/img_xiu_man/img_002.jpg",
+        "assets/img/img_xiu_man/img_003.jpg",
+        "assets/img/img_xiu_man/img_004.jpg",
+        "assets/img/img_xiu_man/img_005.jpg",
+        "assets/img/img_xiu_man/img_006.jpg",
+        "assets/img/img_xiu_man/img_007.jpg",
+        "assets/img/img_xiu_man/img_008.jpg",
+        "assets/img/img_xiu_man/img_009.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 10
+    },
+    {
+      "id": "img_taoyi",
+      "title": "陶艺",
+      "category": "平面视觉",
+      "sub": "非遗 · 视觉",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "陶艺主题视觉作品。",
+      "color": "#c87a4a",
+      "color2": "#3a2113",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_taoyi/img_000.jpg",
+        "assets/img/img_taoyi/img_001.jpg",
+        "assets/img/img_taoyi/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_taoyi_man",
+      "title": "陶艺漫画",
+      "category": "平面视觉",
+      "sub": "非遗 · 漫画",
+      "year": "2025",
+      "role": "插画 / 漫画",
+      "desc": "陶艺元素漫画。",
+      "color": "#b5651d",
+      "color2": "#321a0a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_taoyi_man/img_000.jpg",
+        "assets/img/img_taoyi_man/img_001.jpg",
+        "assets/img/img_taoyi_man/img_002.jpg",
+        "assets/img/img_taoyi_man/img_003.jpg",
+        "assets/img/img_taoyi_man/img_004.jpg",
+        "assets/img/img_taoyi_man/img_005.jpg",
+        "assets/img/img_taoyi_man/img_006.jpg",
+        "assets/img/img_taoyi_man/img_007.jpg",
+        "assets/img/img_taoyi_man/img_008.jpg",
+        "assets/img/img_taoyi_man/img_009.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 10
+    },
+    {
+      "id": "img_zhanban",
+      "title": "非遗宣传展板",
+      "category": "平面视觉",
+      "sub": "非遗 · 平面",
+      "year": "2025",
+      "role": "平面 / 设计",
+      "desc": "非遗主题宣传展板设计。",
+      "color": "#7d5a3c",
+      "color2": "#261a10",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_zhanban/img_000.jpg",
+        "assets/img/img_zhanban/img_001.jpg",
+        "assets/img/img_zhanban/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_long",
+      "title": "龙 · 纹样",
+      "category": "平面视觉",
+      "sub": "纹样 · 意象",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "龙纹样视觉作品。",
+      "color": "#b8860b",
+      "color2": "#3a2c06",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_long/img_000.jpg",
+        "assets/img/img_long/img_001.jpg",
+        "assets/img/img_long/img_002.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        ""
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "img_long_world",
+      "title": "龙与世界",
+      "category": "平面视觉",
+      "sub": "纹样 · 意象",
+      "year": "2025",
+      "role": "视觉 / 设计",
+      "desc": "「龙与世界」主题视觉系列。",
+      "color": "#c79a3a",
+      "color2": "#3a2c10",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/img_long_world/img_000.jpg",
+        "assets/img/img_long_world/img_001.jpg",
+        "assets/img/img_long_world/img_002.jpg",
+        "assets/img/img_long_world/img_003.jpg",
+        "assets/img/img_long_world/img_004.jpg",
+        "assets/img/img_long_world/img_005.jpg",
+        "assets/img/img_long_world/img_006.jpg",
+        "assets/img/img_long_world/img_007.jpg",
+        "assets/img/img_long_world/img_008.jpg",
+        "assets/img/img_long_world/img_009.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 10
+    },
+    {
+      "id": "photo_night",
+      "title": "夜景 / 光影",
+      "category": "摄影",
+      "sub": "夜景 · 光",
+      "year": "2024-2025",
+      "role": "摄影",
+      "desc": "夜晚城市与光影瞬间。",
+      "color": "#3a4a6a",
+      "color2": "#1a2233",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/photo_night/img_000.jpg",
+        "assets/img/photo_night/img_001.jpg"
+      ],
+      "image_captions": [
+        "",
+        ""
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "photo_nature",
+      "title": "自然 / 风光",
+      "category": "摄影",
+      "sub": "自然 · 风光",
+      "year": "2024-2025",
+      "role": "摄影",
+      "desc": "自然风光、植物与水景。",
+      "color": "#5a8a4a",
+      "color2": "#1e3318",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/photo_nature/img_000.jpg",
+        "assets/img/photo_nature/img_001.jpg",
+        "assets/img/photo_nature/img_002.jpg",
+        "assets/img/photo_nature/img_003.jpg",
+        "assets/img/photo_nature/img_004.jpg",
+        "assets/img/photo_nature/img_005.jpg",
+        "assets/img/photo_nature/img_006.jpg",
+        "assets/img/photo_nature/img_007.jpg",
+        "assets/img/photo_nature/img_008.jpg",
+        "assets/img/photo_nature/img_009.jpg",
+        "assets/img/photo_nature/img_010.jpg",
+        "assets/img/photo_nature/img_011.jpg",
+        "assets/img/photo_nature/img_012.jpg",
+        "assets/img/photo_nature/img_013.jpg",
+        "assets/img/photo_nature/img_014.jpg",
+        "assets/img/photo_nature/img_015.jpg",
+        "assets/img/photo_nature/img_016.jpg",
+        "assets/img/photo_nature/img_017.jpg",
+        "assets/img/photo_nature/img_018.jpg",
+        "assets/img/photo_nature/img_019.jpg",
+        "assets/img/photo_nature/img_020.jpg",
+        "assets/img/photo_nature/img_021.jpg",
+        "assets/img/photo_nature/img_022.jpg",
+        "assets/img/photo_nature/img_023.jpg",
+        "assets/img/photo_nature/img_024.jpg",
+        "assets/img/photo_nature/img_025.jpg",
+        "assets/img/photo_nature/img_026.jpg",
+        "assets/img/photo_nature/img_027.jpg",
+        "assets/img/photo_nature/img_028.jpg",
+        "assets/img/photo_nature/img_029.jpg",
+        "assets/img/photo_nature/img_030.jpg",
+        "assets/img/photo_nature/img_031.jpg",
+        "assets/img/photo_nature/img_032.jpg",
+        "assets/img/photo_nature/img_033.jpg",
+        "assets/img/photo_nature/img_034.jpg",
+        "assets/img/photo_nature/img_035.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 36
+    },
+    {
+      "id": "photo_urban",
+      "title": "城市 / 建筑",
+      "category": "摄影",
+      "sub": "城市 · 建筑",
+      "year": "2024-2025",
+      "role": "摄影",
+      "desc": "城市街景与建筑空间。",
+      "color": "#6a7a8a",
+      "color2": "#222a33",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/photo_urban/img_000.jpg",
+        "assets/img/photo_urban/img_001.jpg",
+        "assets/img/photo_urban/img_002.jpg",
+        "assets/img/photo_urban/img_003.jpg",
+        "assets/img/photo_urban/img_004.jpg",
+        "assets/img/photo_urban/img_005.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 6
+    },
+    {
+      "id": "photo_people",
+      "title": "人文 / 纪实",
+      "category": "摄影",
+      "sub": "人文 · 纪实",
+      "year": "2024-2025",
+      "role": "摄影",
+      "desc": "人物、纪实与生活切片。",
+      "color": "#8a6a4a",
+      "color2": "#2a1e14",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/photo_people/img_000.jpg",
+        "assets/img/photo_people/img_001.jpg",
+        "assets/img/photo_people/img_002.jpg",
+        "assets/img/photo_people/img_003.jpg",
+        "assets/img/photo_people/img_004.jpg",
+        "assets/img/photo_people/img_005.jpg",
+        "assets/img/photo_people/img_006.jpg",
+        "assets/img/photo_people/img_007.jpg",
+        "assets/img/photo_people/img_008.jpg",
+        "assets/img/photo_people/img_009.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 10
+    },
+    {
+      "id": "naicha",
+      "title": "奶茶滚烫",
+      "category": "商业实战",
+      "sub": "校园青春励志网络剧",
+      "year": "2026",
+      "role": "导演助理",
+      "desc": "重庆工程学院与重庆数艺影视传媒联合出品的校园青春励志网络剧，2026-04-24 在搜狐视频、乐视TV 同步上线。学生以导演助理、执行制片等岗位身份参与全流程。",
+      "color": "#2f7fd6",
+      "color2": "#7fd0e8",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/naicha/img_000.jpg",
+        "assets/img/naicha/img_001.jpg",
+        "assets/img/naicha/img_002.jpg",
+        "assets/img/naicha/img_003.jpg",
+        "assets/img/naicha/img_004.jpg",
+        "assets/img/naicha/img_005.jpg",
+        "assets/img/naicha/img_006.jpg",
+        "assets/img/naicha/img_007.jpg",
+        "assets/img/naicha/img_008.jpg",
+        "assets/img/naicha/img_009.jpg",
+        "assets/img/naicha/img_010.jpg",
+        "assets/img/naicha/img_011.jpg",
+        "assets/img/naicha/img_012.jpg",
+        "assets/img/naicha/img_013.jpg",
+        "assets/img/naicha/img_014.jpg",
+        "assets/img/naicha/img_015.jpg",
+        "assets/img/naicha/img_016.jpg"
+      ],
+      "image_captions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "source_count": 17
+    },
+    {
+      "id": "hongguo_menglong",
+      "title": "红果短剧《猛龙下山》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 都市玄幻",
+      "year": "2025-2026",
+      "role": "艺人助理",
+      "desc": "红果平台商业短剧《猛龙下山》，都市玄幻题材。开机、榜单与热度数据记录。",
+      "color": "#d6442f",
+      "color2": "#f4c95b",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_menglong/img_000.jpg",
+        "assets/img/hongguo_menglong/img_001.jpg",
+        "assets/img/hongguo_menglong/img_002.jpg",
+        "assets/img/hongguo_menglong/img_003.jpg",
+        "assets/img/hongguo_menglong/img_004.jpg"
+      ],
+      "image_captions": [
+        "开机大吉合影",
+        "红果热播榜 · 第4名 · 热度5138万",
+        "主演合影",
+        "人物海报",
+        "官方海报"
+      ],
+      "source_count": 5
+    },
+    {
+      "id": "hongguo_zuixu",
+      "title": "红果短剧《赘婿复仇，麒麟上身，我无敌了！》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 都市玄幻 · 61集",
+      "year": "2026",
+      "role": "艺人助理",
+      "desc": "改编自番茄小说《我以麒麟体镇红颜》。红果飙升榜第 1，热度 4354 万。",
+      "color": "#8a6a4b",
+      "color2": "#c9a45c",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_zuixu/img_000.jpg",
+        "assets/img/hongguo_zuixu/img_001.jpg",
+        "assets/img/hongguo_zuixu/img_002.jpg",
+        "assets/img/hongguo_zuixu/img_003.jpg",
+        "assets/img/hongguo_zuixu/img_004.jpg",
+        "assets/img/hongguo_zuixu/img_005.jpg",
+        "assets/img/hongguo_zuixu/img_006.jpg"
+      ],
+      "image_captions": [
+        "人物海报",
+        "人物海报",
+        "人物海报",
+        "人物海报",
+        "官方海报 · 我以麒麟体镇红颜",
+        "红果飙升榜 · 第1名 · 热度4354万",
+        "百度百科官方海报"
+      ],
+      "source_count": 7
+    },
+    {
+      "id": "hongguo_luding",
+      "title": "红果短剧《拿我当炉鼎修炼》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 奇幻修仙",
+      "year": "2025-2026",
+      "role": "艺人助理",
+      "desc": "奇幻修仙题材商业短剧（亦名《人到晚年，绝美魔女拿我当炉鼎》），杀青合影与官方海报。",
+      "color": "#5d4a7a",
+      "color2": "#a05a8a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_luding/img_000.jpg",
+        "assets/img/hongguo_luding/img_001.jpg"
+      ],
+      "image_captions": [
+        "杀青合影",
+        "官方海报"
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "hongguo_chuanyue",
+      "title": "红果短剧《穿越成…》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 穿越古装（剧名待确认）",
+      "year": "2026",
+      "role": "艺人助理",
+      "desc": "穿越古装题材商业短剧《穿越成了诸葛卧龙》，开机照与官方海报。",
+      "color": "#b06c38",
+      "color2": "#e8c17a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_chuanyue/img_000.jpg",
+        "assets/img/hongguo_chuanyue/img_001.jpg",
+        "assets/img/hongguo_chuanyue/img_002.jpg"
+      ],
+      "image_captions": [
+        "开机合影",
+        "开机合影",
+        "官方海报"
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "hongguo_zhanqing",
+      "title": "红果短剧《斩情归来，拿回我的江山》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 古装权谋 · 70集",
+      "year": "2026",
+      "role": "艺人助理",
+      "desc": "古装权谋题材商业短剧，主演欧阳卫熹、赵亦菲。",
+      "color": "#8a2f2f",
+      "color2": "#c97a3a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_zhanqing/img_000.jpg",
+        "assets/img/hongguo_zhanqing/img_001.jpg"
+      ],
+      "image_captions": [
+        "官方海报",
+        "百度百科官方海报"
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "hongguo_dangjianpai",
+      "title": "红果短剧《让你当挡箭牌，你真把老板娶了》",
+      "category": "商业实战",
+      "sub": "商业短剧 · 现代都市 · 61集",
+      "year": "2026",
+      "role": "艺人助理",
+      "desc": "现代都市甜宠/逆袭题材商业短剧，漫森短剧出品。",
+      "color": "#5a4a8a",
+      "color2": "#c47a9a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_dangjianpai/img_000.jpg",
+        "assets/img/hongguo_dangjianpai/img_001.jpg"
+      ],
+      "image_captions": [
+        "官方海报",
+        "百度百科官方海报"
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "hongguo_bts",
+      "title": "红果短剧 · 花絮合影",
+      "category": "商业实战",
+      "sub": "商业短剧 · 幕后花絮",
+      "year": "2025-2026",
+      "role": "艺人助理",
+      "desc": "红果短剧项目幕后花絮、主演合影与活动现场记录。",
+      "color": "#4a4a4a",
+      "color2": "#8a8a8a",
+      "kind": "image",
+      "frames": [],
+      "images": [
+        "assets/img/hongguo_bts/img_000.jpg",
+        "assets/img/hongguo_bts/img_001.jpg",
+        "assets/img/hongguo_bts/img_002.jpg",
+        "assets/img/hongguo_bts/img_003.jpg",
+        "assets/img/hongguo_bts/img_004.jpg"
+      ],
+      "image_captions": [
+        "幕后合影",
+        "古装人物照",
+        "幕后合影",
+        "人物海报",
+        "人物海报"
+      ],
+      "source_count": 5
+    }
+  ]
+}

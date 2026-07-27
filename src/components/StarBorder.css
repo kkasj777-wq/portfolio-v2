@@ -1,0 +1,194 @@
+.star-border-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 20px;
+  isolation: isolate;
+}
+
+.border-gradient-bottom,
+.border-gradient-top {
+  position: absolute;
+  z-index: 0;
+  width: 300%;
+  height: 50%;
+  border-radius: 50%;
+  opacity: .7;
+  pointer-events: none;
+}
+
+.star-border-container:is(:hover, :focus-visible, .is-active, .is-flow-visible) > :is(.border-gradient-bottom, .border-gradient-top) {
+  will-change: transform, opacity;
+}
+
+.episode-tab:not(.is-flow-visible) > :is(.border-gradient-bottom, .border-gradient-top) {
+  animation-play-state: paused;
+}
+
+.border-gradient-bottom {
+  right: -250%;
+  bottom: -12px;
+  animation: star-movement-bottom linear infinite alternate;
+}
+
+.border-gradient-top {
+  top: -12px;
+  left: -250%;
+  animation: star-movement-top linear infinite alternate;
+}
+
+.star-border-container > .inner-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: inherit;
+  background: #05070a;
+  color: #fff;
+  text-align: center;
+}
+
+/* Hero: one clear, luminous entry point without changing the link semantics. */
+.star-border-container.star-cta {
+  min-height: 54px;
+  border-radius: 14px;
+  background: transparent;
+  color: #effffd;
+  box-shadow: 0 16px 46px rgba(45, 226, 216, .13);
+}
+
+.star-border-container.star-cta > .inner-content {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 25px;
+  border-color: rgba(138, 255, 248, .22);
+  border-radius: 13px;
+  background: linear-gradient(120deg, rgba(26, 59, 61, .9), rgba(4, 10, 13, .96) 62%);
+  color: #effffd;
+}
+
+.star-border-container.star-cta:hover > .inner-content {
+  background: linear-gradient(120deg, rgba(42, 100, 99, .92), rgba(5, 13, 16, .98) 68%);
+}
+
+/* Archive tabs: the active mode gets the stronger comet pass. */
+.archive-switch .star-border-container.archive-switch-tab {
+  min-width: 0;
+  min-height: 72px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.archive-switch .archive-switch-tab > .inner-content {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 21px;
+  border-color: transparent;
+  border-radius: 11px;
+  background: rgba(7, 10, 14, .72);
+  color: #7c8592;
+}
+
+.archive-switch .archive-switch-tab.is-active > .inner-content {
+  border-color: rgba(185, 255, 250, .34);
+  background: linear-gradient(120deg, #84fff6, #35dcd3);
+  color: #04100f;
+  box-shadow: 0 12px 36px rgba(79, 245, 233, .14);
+}
+
+.archive-switch .archive-switch-tab:not(.is-active) > .border-gradient-bottom,
+.archive-switch .archive-switch-tab:not(.is-active) > .border-gradient-top {
+  opacity: .24;
+}
+
+/* Full archive continuation. */
+.load-more.star-border-container {
+  border: 0;
+  background: transparent;
+}
+
+.load-more.star-border-container > .inner-content {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  border-color: rgba(255, 255, 255, .14);
+  border-radius: 13px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, .045), rgba(79, 245, 233, .025));
+  color: #c4cad3;
+}
+
+.load-more.star-border-container:hover > .inner-content {
+  border-color: rgba(79, 245, 233, .36);
+  background: rgba(79, 245, 233, .06);
+}
+
+/* Episode cards keep the comet subtle until an episode becomes the active cut. */
+.episode-tab.star-border-container > .border-gradient-bottom,
+.episode-tab.star-border-container > .border-gradient-top {
+  height: 62%;
+  filter: brightness(.62) saturate(.78);
+  transition: height .3s ease, filter .3s ease;
+}
+
+.episode-tab.star-border-container.is-active > .border-gradient-bottom,
+.episode-tab.star-border-container.is-active > .border-gradient-top {
+  height: 82%;
+  filter: brightness(1.35) saturate(1.15) drop-shadow(0 0 7px rgba(79, 245, 233, .72));
+}
+
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .star-border-container.star-cta,
+  .star-border-container.star-cta > .inner-content {
+    width: 100%;
+  }
+
+  .archive-switch .star-border-container.archive-switch-tab {
+    min-height: 62px;
+  }
+
+  .archive-switch .archive-switch-tab > .inner-content {
+    min-height: 60px;
+    padding: 0 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-gradient-bottom,
+  .border-gradient-top {
+    animation: none;
+    opacity: .35;
+  }
+}

@@ -1,0 +1,386 @@
+[
+  {
+    "key": "tongyoulu/ep01",
+    "preview": "assets/video/previews/tongyoulu/ep01.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\????????.mp4",
+    "sourceDurationSeconds": 586.51,
+    "previewStartSeconds": 523,
+    "previewDurationSeconds": 30,
+    "bytes": 3355288
+  },
+  {
+    "key": "tongyoulu/ep02",
+    "preview": "assets/video/previews/tongyoulu/ep02.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\?????? ??????.mp4",
+    "sourceDurationSeconds": 526.91,
+    "previewStartSeconds": 168.61,
+    "previewDurationSeconds": 30,
+    "bytes": 3917595
+  },
+  {
+    "key": "tongyoulu/ep03",
+    "preview": "assets/video/previews/tongyoulu/ep03.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\????????-????.mp4",
+    "sourceDurationSeconds": 439.9,
+    "previewStartSeconds": 140.77,
+    "previewDurationSeconds": 30,
+    "bytes": 4166591
+  },
+  {
+    "key": "tongyoulu/ep04",
+    "preview": "assets/video/previews/tongyoulu/ep04.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\????????????.mp4",
+    "sourceDurationSeconds": 576.81,
+    "previewStartSeconds": 184.58,
+    "previewDurationSeconds": 30,
+    "bytes": 4384333
+  },
+  {
+    "key": "tongyoulu/ep05",
+    "preview": "assets/video/previews/tongyoulu/ep05.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\????????????.mp4",
+    "sourceDurationSeconds": 555.72,
+    "previewStartSeconds": 177.83,
+    "previewDurationSeconds": 30,
+    "bytes": 4040191
+  },
+  {
+    "key": "tongyoulu/ep06",
+    "preview": "assets/video/previews/tongyoulu/ep06.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\???.mp4",
+    "sourceDurationSeconds": 443.27,
+    "previewStartSeconds": 141.85,
+    "previewDurationSeconds": 30,
+    "bytes": 3122110
+  },
+  {
+    "key": "tongyoulu/ep07",
+    "preview": "assets/video/previews/tongyoulu/ep07.mp4",
+    "source": "F:\\???\\01_????\\03_????_???\\???.mp4",
+    "sourceDurationSeconds": 483.74,
+    "previewStartSeconds": 154.8,
+    "previewDurationSeconds": 30,
+    "bytes": 2871185
+  },
+  {
+    "key": "maimai/ep01",
+    "preview": "assets/video/previews/maimai/ep01.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第一集 小鱼面包.mp4",
+    "sourceDurationSeconds": 105.16,
+    "previewStartSeconds": 66,
+    "previewDurationSeconds": 15,
+    "selectionNote": "小猫吃下小鱼面包后变身，进入水下与小鱼相遇",
+    "bytes": 2099916
+  },
+  {
+    "key": "maimai/ep02",
+    "preview": "assets/video/previews/maimai/ep02.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第二集  云朵面包.MOV",
+    "sourceDurationSeconds": 116.36,
+    "previewStartSeconds": 65,
+    "previewDurationSeconds": 15,
+    "selectionNote": "云朵面包出炉，小兔吃下后化作柔软云朵",
+    "bytes": 1612383
+  },
+  {
+    "key": "maimai/ep03",
+    "preview": "assets/video/previews/maimai/ep03.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第三集 太极面包.mp4",
+    "sourceDurationSeconds": 138.09,
+    "previewStartSeconds": 60,
+    "previewDurationSeconds": 15,
+    "selectionNote": "熊猫在山巅与竹林间施展太极",
+    "bytes": 1357552
+  },
+  {
+    "key": "maimai/ep04",
+    "preview": "assets/video/previews/maimai/ep04.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第四集 泡泡面包.mp4",
+    "sourceDurationSeconds": 129.68,
+    "previewStartSeconds": 92,
+    "previewDurationSeconds": 15,
+    "selectionNote": "泡泡面包生效，小老鼠乘泡泡越过断桥",
+    "bytes": 2641168
+  },
+  {
+    "key": "maimai/ep05",
+    "preview": "assets/video/previews/maimai/ep05.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第五集 伸缩面包.mp4",
+    "sourceDurationSeconds": 119.86,
+    "previewStartSeconds": 64,
+    "previewDurationSeconds": 15,
+    "selectionNote": "小狗借伸缩面包伸长身体与手臂",
+    "bytes": 2091554
+  },
+  {
+    "key": "maimai/ep06",
+    "preview": "assets/video/previews/maimai/ep06.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第六集 彩虹面包.mp4",
+    "sourceDurationSeconds": 117.1,
+    "previewStartSeconds": 81,
+    "previewDurationSeconds": 15,
+    "selectionNote": "青蛙与小鸭踏出彩虹道路并重归于好",
+    "bytes": 3137725
+  },
+  {
+    "key": "maimai/ep07",
+    "preview": "assets/video/previews/maimai/ep07.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第七集 绿化面包.mp4",
+    "sourceDurationSeconds": 121.3,
+    "previewStartSeconds": 88,
+    "previewDurationSeconds": 15,
+    "selectionNote": "彩色魔法将荒地变成繁花森林",
+    "bytes": 3176210
+  },
+  {
+    "key": "maimai/ep08",
+    "preview": "assets/video/previews/maimai/ep08.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第八集 音乐面包.mp4",
+    "sourceDurationSeconds": 133.31,
+    "previewStartSeconds": 78,
+    "previewDurationSeconds": 15,
+    "selectionNote": "音乐面包让小鸟唱歌并召集森林音乐会",
+    "bytes": 3656173
+  },
+  {
+    "key": "maimai/ep09",
+    "preview": "assets/video/previews/maimai/ep09.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第九集 飞行面包.mp4",
+    "sourceDurationSeconds": 133.15,
+    "previewStartSeconds": 88,
+    "previewDurationSeconds": 15,
+    "selectionNote": "小羊穿上宇航服飞向月球与星际乐园",
+    "bytes": 3777610
+  },
+  {
+    "key": "maimai/ep10",
+    "preview": "assets/video/previews/maimai/ep10.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十集 弹簧面包.MP4",
+    "sourceDurationSeconds": 111.11,
+    "previewStartSeconds": 70,
+    "previewDurationSeconds": 15,
+    "selectionNote": "仓鼠进入云端魔法树，并踩上弹簧云鞋",
+    "bytes": 2803026
+  },
+  {
+    "key": "maimai/ep11",
+    "preview": "assets/video/previews/maimai/ep11.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十一集 绘画面包.mp4",
+    "sourceDurationSeconds": 103.45,
+    "previewStartSeconds": 64,
+    "previewDurationSeconds": 15,
+    "selectionNote": "绘画面包分给伙伴，并为树爷爷装点生日派对",
+    "bytes": 2056931
+  },
+  {
+    "key": "maimai/ep12",
+    "preview": "assets/video/previews/maimai/ep12.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十二集 好梦面包.mp4",
+    "sourceDurationSeconds": 135.72,
+    "previewStartSeconds": 85,
+    "previewDurationSeconds": 15,
+    "selectionNote": "梦境泡泡唤醒小鹿，小鹿化作星光精灵",
+    "bytes": 1542221
+  },
+  {
+    "key": "maimai/ep13",
+    "preview": "assets/video/previews/maimai/ep13.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十三集 房屋面包.MP4",
+    "sourceDurationSeconds": 112.78,
+    "previewStartSeconds": 62,
+    "previewDurationSeconds": 15,
+    "selectionNote": "猴子吃下房屋面包，用金色魔法建起森林小屋",
+    "bytes": 2070146
+  },
+  {
+    "key": "maimai/ep14",
+    "preview": "assets/video/previews/maimai/ep14.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十四集 勇气面包.MP4",
+    "sourceDurationSeconds": 147.83,
+    "previewStartSeconds": 68,
+    "previewDurationSeconds": 15,
+    "selectionNote": "小狐狸吃下勇气面包，胸口亮起勇气之星",
+    "bytes": 1605093
+  },
+  {
+    "key": "maimai/ep15",
+    "preview": "assets/video/previews/maimai/ep15.mp4",
+    "source": "F:\\作品集\\麦麦的面包店\\麦麦的面包店\\第十五集 发光面包.MP4",
+    "sourceDurationSeconds": 110.97,
+    "previewStartSeconds": 60,
+    "previewDurationSeconds": 15,
+    "selectionNote": "星星面包点亮小刺猬，让她不再害怕黑夜",
+    "bytes": 1461799
+  },
+  {
+    "key": "xindong",
+    "preview": "assets/video/previews/xindong.mp4",
+    "source": "F:\\作品集\\a视频类\\剧情片\\心动策划案.mp4",
+    "sourceDurationSeconds": 612.42,
+    "previewStartSeconds": 195.97,
+    "previewDurationSeconds": 15,
+    "bytes": 1942383
+  },
+  {
+    "key": "jinyan",
+    "preview": "assets/video/previews/jinyan.mp4",
+    "source": "F:\\作品集\\a视频类\\剧情片\\禁言最终和谐版.mp4",
+    "sourceDurationSeconds": 205.24,
+    "previewStartSeconds": 140,
+    "previewDurationSeconds": 15,
+    "bytes": 1419347
+  },
+  {
+    "key": "mufeng",
+    "preview": "assets/video/previews/mufeng.mp4",
+    "source": "F:\\作品集\\a视频类\\剧情片\\牧   风 MP4.mp4",
+    "sourceDurationSeconds": 354.78,
+    "previewStartSeconds": 113.53,
+    "previewDurationSeconds": 15,
+    "bytes": 1796553
+  },
+  {
+    "key": "qishuku",
+    "preview": "assets/video/previews/qishuku.mp4",
+    "source": "F:\\作品集\\4k\\弃书库的守门人_1_chr2_prob4.mp4",
+    "sourceDurationSeconds": 80.36,
+    "previewStartSeconds": 25.72,
+    "previewDurationSeconds": 15,
+    "bytes": 2893345
+  },
+  {
+    "key": "taoyan",
+    "preview": "assets/video/previews/taoyan.mp4",
+    "source": "F:\\作品集\\4k\\我最讨厌的人_10_chr2_prob4.mp4",
+    "sourceDurationSeconds": 221.66,
+    "previewStartSeconds": 105,
+    "previewDurationSeconds": 15,
+    "bytes": 1779435
+  },
+  {
+    "key": "shancheng",
+    "preview": "assets/video/previews/shancheng.mp4",
+    "source": "F:\\作品集\\4k\\热血山城_1_chr2_prob4.mp4",
+    "sourceDurationSeconds": 138.67,
+    "previewStartSeconds": 44.37,
+    "previewDurationSeconds": 15,
+    "bytes": 2086977
+  },
+  {
+    "key": "zoumagang",
+    "preview": "assets/video/previews/zoumagang.mp4",
+    "source": "F:\\作品集\\4k\\走马岗的来历_1_chf3_ghq5.mp4",
+    "sourceDurationSeconds": 183.22,
+    "previewStartSeconds": 58.63,
+    "previewDurationSeconds": 15,
+    "bytes": 2435393
+  },
+  {
+    "key": "dongdeng",
+    "preview": "assets/video/previews/dongdeng.mp4",
+    "source": "F:\\作品集\\a视频类\\纪录片\\冬等最终版.mp4",
+    "sourceDurationSeconds": 94.9,
+    "previewStartSeconds": 30.37,
+    "previewDurationSeconds": 15,
+    "bytes": 964785
+  },
+  {
+    "key": "xiayan",
+    "preview": "assets/video/previews/xiayan.mp4",
+    "source": "F:\\作品集\\a视频类\\纪录片\\峡砚3.0.mp4",
+    "sourceDurationSeconds": 214.55,
+    "previewStartSeconds": 68.66,
+    "previewDurationSeconds": 15,
+    "bytes": 355957
+  },
+  {
+    "key": "douyun",
+    "preview": "assets/video/previews/douyun.mp4",
+    "source": "F:\\作品集\\a视频类\\纪录片\\豆晕4k.mp4",
+    "sourceDurationSeconds": 233.08,
+    "previewStartSeconds": 74.59,
+    "previewDurationSeconds": 15,
+    "bytes": 900490
+  },
+  {
+    "key": "fanjiagxiang",
+    "preview": "assets/video/previews/fanjiagxiang.mp4",
+    "source": "F:\\作品集\\a视频类\\宣传片\\反家乡纪录片.mp4",
+    "sourceDurationSeconds": 231.41,
+    "previewStartSeconds": 55,
+    "previewDurationSeconds": 15,
+    "bytes": 1875936
+  },
+  {
+    "key": "cixiu_video",
+    "preview": "assets/video/previews/cixiu_video.mp4",
+    "source": "F:\\作品集\\a视频类\\刺绣\\2fde86f02369febb106c446f612c7305_raw.mp4",
+    "sourceDurationSeconds": 10.05,
+    "previewStartSeconds": 0,
+    "previewDurationSeconds": 15,
+    "bytes": 2050486
+  },
+  {
+    "key": "banhua_video",
+    "preview": "assets/video/previews/banhua_video.mp4",
+    "source": "F:\\作品集\\a视频类\\非遗版画\\14ed9a4953c31526caf8005404c96af5_raw.mp4",
+    "sourceDurationSeconds": 10.05,
+    "previewStartSeconds": 0,
+    "previewDurationSeconds": 15,
+    "bytes": 2491882
+  },
+  {
+    "key": "ai_miaoxu",
+    "preview": "assets/video/previews/ai_showcase/miaoxu.mp4",
+    "source": "F:\\???\\AI??\\?2? ???? .mp4.MP4",
+    "sourceDurationSeconds": 61.23,
+    "previewStartSeconds": 28,
+    "previewDurationSeconds": 15,
+    "bytes": 4635156
+  },
+  {
+    "key": "ai_guangyu",
+    "preview": "assets/video/previews/ai_showcase/guangyu.mp4",
+    "source": "F:\\???\\AI??\\?3???????4?23?.mp4",
+    "sourceDurationSeconds": 162.42,
+    "previewStartSeconds": 72,
+    "previewDurationSeconds": 15,
+    "bytes": 3147908
+  },
+  {
+    "key": "ai_poying",
+    "preview": "assets/video/previews/ai_showcase/poying.mp4",
+    "source": "F:\\???\\AI??\\?4?????.mp4.mp4",
+    "sourceDurationSeconds": 182.97,
+    "previewStartSeconds": 78,
+    "previewDurationSeconds": 15,
+    "bytes": 1238213
+  },
+  {
+    "key": "ai_wanlaixin",
+    "preview": "assets/video/previews/ai_showcase/wanlaixin.mp4",
+    "source": "F:\\???\\AI??\\?5??????.mp4.mp4",
+    "sourceDurationSeconds": 239.19,
+    "previewStartSeconds": 184,
+    "previewDurationSeconds": 15,
+    "bytes": 1377328
+  },
+  {
+    "key": "ai_nianhua",
+    "preview": "assets/video/previews/ai_showcase/nianhua.mp4",
+    "source": "F:\\???\\AI??\\?6? ??.mp4.mp4",
+    "sourceDurationSeconds": 84.24,
+    "previewStartSeconds": 42,
+    "previewDurationSeconds": 15,
+    "bytes": 2278251
+  },
+  {
+    "key": "ai_mufeng4k",
+    "preview": "assets/video/previews/ai_showcase/mufeng4k.mp4",
+    "source": "F:\\???\\AI??\\??? ??4k.mp4",
+    "sourceDurationSeconds": 346.49,
+    "previewStartSeconds": 145,
+    "previewDurationSeconds": 15,
+    "bytes": 1168836
+  }
+]

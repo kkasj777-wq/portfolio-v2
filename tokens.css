@@ -1,0 +1,31 @@
+/* Hallmark - portable reference tokens for the V7 PDF system. */
+:root {
+  --color-paper: oklch(95% 0.009 82);
+  --color-paper-deep: oklch(90% 0.010 82);
+  --color-ink: oklch(16% 0.012 245);
+  --color-ink-soft: oklch(25% 0.012 245);
+  --color-silver: oklch(61% 0.013 235);
+  --color-rule: oklch(79% 0.010 235);
+  --color-signal: oklch(53% 0.165 28);
+  --font-display: "Source Han Serif SC", serif;
+  --font-body: "Noto Sans SC", sans-serif;
+  --font-outlier: "Inter", sans-serif;
+  --space-3xs: 2pt;
+  --space-2xs: 4pt;
+  --space-xs: 8pt;
+  --space-sm: 12pt;
+  --space-md: 16pt;
+  --space-lg: 24pt;
+  --space-xl: 40pt;
+  --space-2xl: 64pt;
+  --space-3xl: 96pt;
+  --text-xs: 6.5pt;
+  --text-sm: 8pt;
+  --text-base: 10pt;
+  --text-md: 12.5pt;
+  --text-lg: 16pt;
+  --text-xl: 25pt;
+  --text-display: 44pt;
+  --rule-hairline: 0.45pt;
+  --radius-card: 0;
+}

@@ -1,0 +1,301 @@
+.pill-nav-container {
+  --nav-height: 46px;
+  position: fixed;
+  z-index: 120;
+  top: 20px;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  transform: translateX(-50%);
+  isolation: isolate;
+}
+
+.pill-nav {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 7px;
+}
+
+.pill-nav-items,
+.pill-logo,
+.mobile-menu-button,
+.mobile-menu-popover {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(79, 245, 233, 0.2);
+  background: color-mix(in srgb, var(--pill-base) 88%, transparent);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+}
+
+.pill-nav-items::before,
+.pill-logo::before,
+.mobile-menu-button::before,
+.mobile-menu-popover::before,
+.pill::before,
+.mobile-menu-link::before {
+  content: '';
+  position: absolute;
+  z-index: 8;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--flow-angle),
+    transparent 0 62%,
+    rgba(79, 245, 233, .24) 69%,
+    #4ff5e9 74%,
+    #effffd 76%,
+    #4ff5e9 78%,
+    transparent 88%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: flow-border-orbit 4.2s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(79, 245, 233, .42));
+}
+
+.pill-nav-items::before { animation-duration: 6.8s; }
+.mobile-menu-popover::before { animation-duration: 6s; }
+
+.pill-nav-items {
+  height: var(--nav-height);
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.pill-logo {
+  width: var(--nav-height);
+  height: var(--nav-height);
+  flex: 0 0 var(--nav-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 7px;
+  border-radius: 50%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pill-logo:hover,
+.pill-logo:focus-visible {
+  border-color: rgba(79, 245, 233, 0.76);
+  box-shadow: 0 0 24px rgba(79, 245, 233, 0.22), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.pill-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pill-list {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+}
+
+.pill-list > li {
+  height: 100%;
+  display: flex;
+}
+
+.pill {
+  position: relative;
+  isolation: isolate;
+  height: 100%;
+  min-width: 76px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pill:hover,
+.pill:focus-visible,
+.pill.is-active {
+  border-color: rgba(79, 245, 233, 0.52);
+  box-shadow: inset 0 0 13px rgba(79, 245, 233, 0.08), 0 0 14px rgba(79, 245, 233, 0.06);
+}
+
+.pill:focus-visible,
+.pill-logo:focus-visible,
+.mobile-menu-button:focus-visible,
+.mobile-menu-link:focus-visible {
+  outline: 2px solid #4ff5e9;
+  outline-offset: 3px;
+}
+
+.pill .hover-circle {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  border-radius: 50%;
+  background: #4ff5e9;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pill .label-stack {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 1;
+}
+
+.pill-label {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+
+.pill-label-hover {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  color: var(--pill-hover-text);
+  will-change: transform, opacity;
+}
+
+.pill.is-active::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  right: 13px;
+  bottom: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4ff5e9;
+  box-shadow: 0 0 8px #4ff5e9;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.mobile-menu-button {
+  width: var(--nav-height);
+  height: var(--nav-height);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  border-radius: 50%;
+  color: #4ff5e9;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 17px;
+  height: 1px;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: center;
+}
+
+.mobile-menu-popover {
+  position: absolute;
+  top: calc(var(--nav-height) + 9px);
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  visibility: hidden;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+}
+
+.mobile-menu-link {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-menu-link span {
+  color: #66727d;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible,
+.mobile-menu-link.is-active {
+  border-color: rgba(79, 245, 233, 0.34);
+  background: rgba(79, 245, 233, 0.11);
+  color: #eafffc;
+  box-shadow: inset 0 0 20px rgba(79, 245, 233, 0.05);
+}
+
+@media (max-width: 768px) {
+  .pill-nav-container {
+    top: 13px;
+    width: calc(100% - 28px);
+    max-width: none;
+  }
+
+  .pill-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill,
+  .pill-logo,
+  .mobile-menu-link {
+    transition-duration: 0.01ms;
+  }
+}

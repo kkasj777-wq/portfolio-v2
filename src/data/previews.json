@@ -1,0 +1,59 @@
+{
+  "works": {
+    "yafobuyu": "assets/video/previews/yafobuyu.mp4",
+    "shoudian": "assets/video/previews/shoudian.mp4",
+    "xindong": "assets/video/previews/xindong.mp4",
+    "jinyan": "assets/video/previews/jinyan.mp4",
+    "mufeng": "assets/video/previews/mufeng.mp4",
+    "qishuku": "assets/video/previews/qishuku.mp4",
+    "taoyan": "assets/video/previews/taoyan.mp4",
+    "shancheng": "assets/video/previews/shancheng.mp4",
+    "zoumagang": "assets/video/previews/zoumagang.mp4",
+    "dongdeng": "assets/video/previews/dongdeng.mp4",
+    "xiayan": "assets/video/previews/xiayan.mp4",
+    "douyun": "assets/video/previews/douyun.mp4",
+    "fanjiagxiang": "assets/video/previews/fanjiagxiang.mp4",
+    "hongguo_menglong": "assets/video/previews/hongguo_menglong.mp4",
+    "hongguo_zuixu": "assets/video/previews/hongguo_zuixu.mp4",
+    "hongguo_luding": "assets/video/previews/hongguo_luding.mp4",
+    "hongguo_chuanyue": "assets/video/previews/hongguo_chuanyue.mp4",
+    "hongguo_zhanqing": "assets/video/previews/hongguo_zhanqing.mp4",
+    "hongguo_dangjianpai": "assets/video/previews/hongguo_dangjianpai.mp4",
+    "cixiu_video": "assets/video/previews/cixiu_video.mp4",
+    "banhua_video": "assets/video/previews/banhua_video.mp4",
+    "ai_miaoxu": "assets/video/previews/ai_showcase/miaoxu.mp4",
+    "ai_guangyu": "assets/video/previews/ai_showcase/guangyu.mp4",
+    "ai_poying": "assets/video/previews/ai_showcase/poying.mp4",
+    "ai_wanlaixin": "assets/video/previews/ai_showcase/wanlaixin.mp4",
+    "ai_nianhua": "assets/video/previews/ai_showcase/nianhua.mp4",
+    "ai_mufeng4k": "assets/video/previews/ai_showcase/mufeng4k.mp4"
+  },
+  "episodes": {
+    "tongyoulu": {
+      "ep01": "assets/video/previews/tongyoulu/ep01.mp4",
+      "ep02": "assets/video/previews/tongyoulu/ep02.mp4",
+      "ep03": "assets/video/previews/tongyoulu/ep03.mp4",
+      "ep04": "assets/video/previews/tongyoulu/ep04.mp4",
+      "ep05": "assets/video/previews/tongyoulu/ep05.mp4",
+      "ep06": "assets/video/previews/tongyoulu/ep06.mp4",
+      "ep07": "assets/video/previews/tongyoulu/ep07.mp4"
+    },
+    "maimai": {
+      "ep01": "assets/video/previews/maimai/ep01.mp4",
+      "ep02": "assets/video/previews/maimai/ep02.mp4",
+      "ep03": "assets/video/previews/maimai/ep03.mp4",
+      "ep04": "assets/video/previews/maimai/ep04.mp4",
+      "ep05": "assets/video/previews/maimai/ep05.mp4",
+      "ep06": "assets/video/previews/maimai/ep06.mp4",
+      "ep07": "assets/video/previews/maimai/ep07.mp4",
+      "ep08": "assets/video/previews/maimai/ep08.mp4",
+      "ep09": "assets/video/previews/maimai/ep09.mp4",
+      "ep10": "assets/video/previews/maimai/ep10.mp4",
+      "ep11": "assets/video/previews/maimai/ep11.mp4",
+      "ep12": "assets/video/previews/maimai/ep12.mp4",
+      "ep13": "assets/video/previews/maimai/ep13.mp4",
+      "ep14": "assets/video/previews/maimai/ep14.mp4",
+      "ep15": "assets/video/previews/maimai/ep15.mp4"
+    }
+  }
+}

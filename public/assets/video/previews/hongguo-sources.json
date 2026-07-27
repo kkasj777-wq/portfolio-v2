@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-18T15:41:34.084Z",
+  "works": [
+    {
+      "key": "hongguo_menglong",
+      "title": "猛龙下山",
+      "seriesId": "7641106063080557592",
+      "episodeId": "7641109102822706200",
+      "officialPlayer": "https://hongguoduanju.com/player/7641106063080557592/7641109102822706200",
+      "sourceDurationSeconds": 246.699,
+      "previewStartSeconds": 35,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_menglong.mp4",
+      "bytes": 2487107
+    },
+    {
+      "key": "hongguo_zuixu",
+      "title": "赘婿复仇，麒麟上身，我无敌了！",
+      "seriesId": "7604033108312083480",
+      "episodeId": "7604035078074682393",
+      "officialPlayer": "https://hongguoduanju.com/player/7604033108312083480/7604035078074682393",
+      "sourceDurationSeconds": 342.209,
+      "previewStartSeconds": 30,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_zuixu.mp4",
+      "bytes": 2714214
+    },
+    {
+      "key": "hongguo_luding",
+      "title": "人到晚年，绝美魔女拿我当炉鼎",
+      "seriesId": "7516455152690154558",
+      "episodeId": "7516760581165026366",
+      "officialPlayer": "https://hongguoduanju.com/player/7516455152690154558/7516760581165026366",
+      "sourceDurationSeconds": 111.642,
+      "previewStartSeconds": 35,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_luding.mp4",
+      "bytes": 1490473
+    },
+    {
+      "key": "hongguo_chuanyue",
+      "title": "穿越成了诸葛卧龙",
+      "seriesId": "7376857379536653336",
+      "episodeId": "7376879743443930136",
+      "officialPlayer": "https://hongguoduanju.com/player/7376857379536653336/7376879743443930136",
+      "sourceDurationSeconds": 121.967,
+      "previewStartSeconds": 25,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_chuanyue.mp4",
+      "bytes": 1659916
+    },
+    {
+      "key": "hongguo_zhanqing",
+      "title": "斩情归来，拿回我的江山",
+      "seriesId": "7600403174360370238",
+      "episodeId": "7600405369524866073",
+      "officialPlayer": "https://hongguoduanju.com/player/7600403174360370238/7600405369524866073",
+      "sourceDurationSeconds": 223.786,
+      "previewStartSeconds": 25,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_zhanqing.mp4",
+      "bytes": 2232137
+    },
+    {
+      "key": "hongguo_dangjianpai",
+      "title": "让你当挡箭牌，你真把老板娶了",
+      "seriesId": "7606591532514167870",
+      "episodeId": "7606593391240940606",
+      "officialPlayer": "https://hongguoduanju.com/player/7606591532514167870/7606593391240940606",
+      "sourceDurationSeconds": 146.539,
+      "previewStartSeconds": 25,
+      "previewDurationSeconds": 15,
+      "preview": "assets/video/previews/hongguo_dangjianpai.mp4",
+      "bytes": 2186079
+    }
+  ]
+}
