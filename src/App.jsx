@@ -1473,7 +1473,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>PORTFOLIO V6 / © 2026 WANG CHENXIN</span>
+          <span>PORTFOLIO V7 / © 2026 WANG CHENXIN</span>
         </div>
       </div>
     </footer>

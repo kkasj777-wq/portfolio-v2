@@ -18,34 +18,33 @@ const cardSelector = [
   '.strength-grid > article',
 ].join(',');
 
-const textRevealSelector = [
-  '.work-card .work-meta',
-  '.work-card h3',
-  '.work-card > p',
-  '.work-card-slogan',
-  '.series-portal-copy > *',
-  '.writing-copy > *',
-  '.writing-methods article > *',
-  '.script-library-heading > *',
-  '.script-card > *:not(.magic-bento-glow-layer)',
-  '.commercial-numbers > *',
-  '.redfruit-strip button > strong',
-  '.redfruit-strip button > small',
-  '.about-lead',
-  '.about-data > div',
-  '.tool-stack > *',
-  '.tool-stack li',
-  '.writing-copy dl > div',
-  '.writing-numbers > div',
-  '.experience-list article > *',
-  '.award-strip article > *',
-  '.strength-grid article > *:not(.corner):not(.magic-bento-glow-layer)',
-  '.strength-grid li',
+const textGroupSelector = [
+  '.section-heading',
+  '.series-portals > button',
+  '.work-card',
+  '.writing-feature',
+  '.writing-methods article',
+  '.script-library-heading',
+  '.script-card',
+  '.writing-archive',
+  '.commercial-lead',
+  '.commercial-numbers',
+  '.redfruit-strip button',
+  '.identity-visual',
+  '.about-copy',
+  '.experience-list article',
+  '.award-strip',
+  '.strength-grid article',
+  '.archive-flow-heading',
+  '.flowing-menu-item',
+  '.contact-inner',
 ].join(',');
+
+const textElementSelector = 'h2,h3,h4,p,blockquote,small,strong,b,li,dt,dd,time,span,.eyebrow,.work-meta,.series-portal-copy > *,.script-card-code,.script-card-meta,.about-data > div,.tool-stack > span,.writing-numbers > div,.strength-top,.contact-meta';
 
 export default function PortfolioMotion({ scopeRef }) {
   useLayoutEffect(() => {
-    const scope = scopeRef.current;
+    const scope = scopeRef.current || document.querySelector('.app');
     if (
       !scope
       || window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -75,54 +74,35 @@ export default function PortfolioMotion({ scopeRef }) {
             .fromTo(heading.querySelector('.section-display-title'), { xPercent: -115, scaleX: 0.38, transformOrigin: 'left center', autoAlpha: 0, clipPath: 'inset(0 100% 0 0)' }, { xPercent: 0, scaleX: 1, autoAlpha: 1, clipPath: 'inset(0 0% 0 0)', duration: 2.25 })
             .fromTo(heading.querySelector('.section-index'), { x: -120, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.25 }, 0.26)
             .fromTo(heading.querySelector('.eyebrow'), { x: -150, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.4 }, 0.18);
-          const description = heading.querySelector(':scope > p');
-          if (description) headingTimeline.fromTo(description, { y: 90, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.35 }, 0.68);
         }
 
         const cards = section.querySelectorAll(cardSelector);
-        if (cards.length) {
-          gsap.fromTo(cards, {
-            y: 190,
-            scale: 0.84,
-            rotateX: 13,
+        cards.forEach((card, index) => {
+          gsap.set(card, {
+            x: index % 2 ? 120 : -120,
+            y: 150,
+            scale: 0.82,
+            rotateX: 14,
+            rotateZ: index % 2 ? 1.3 : -1.3,
             transformPerspective: 1200,
             transformOrigin: 'center bottom',
             autoAlpha: 0,
-            clipPath: 'inset(28% 0 0 0 round 18px)',
-          }, {
+            clipPath: 'inset(34% 7% 0 7% round 22px)',
+          });
+          gsap.to(card, {
+            x: 0,
             y: 0,
             scale: 1,
             rotateX: 0,
+            rotateZ: 0,
             autoAlpha: 1,
             clipPath: 'inset(0% 0 0 0 round 18px)',
-            duration: 1.7,
-            stagger: 0.19,
+            duration: 1.65,
             ease: 'expo.out',
             clearProps: 'transform',
-            scrollTrigger: { trigger: cards[0], start: 'top 79%', once: true },
+            scrollTrigger: { trigger: card, start: 'top 68%', once: true },
           });
-        }
-
-        const textItems = section.querySelectorAll(textRevealSelector);
-        if (textItems.length) {
-          gsap.fromTo(textItems, {
-            y: 86,
-            scale: 0.94,
-            autoAlpha: 0,
-            filter: 'blur(16px)',
-            clipPath: 'inset(0 0 52% 0)',
-          }, {
-            y: 0,
-            scale: 1,
-            autoAlpha: 1,
-            filter: 'blur(0px)',
-            clipPath: 'inset(0 0 0% 0)',
-            duration: 1.55,
-            stagger: 0.075,
-            ease: 'power4.out',
-            scrollTrigger: { trigger: textItems[0], start: 'top 84%', once: true },
-          });
-        }
+        });
 
         section.querySelectorAll('img').forEach((image) => {
           gsap.fromTo(image, { clipPath: 'inset(0 0 100% 0)', scale: 1.22, yPercent: 12 }, {
@@ -131,7 +111,7 @@ export default function PortfolioMotion({ scopeRef }) {
             yPercent: 0,
             duration: 1.8,
             ease: 'expo.out',
-            scrollTrigger: { trigger: image, start: 'top 82%', once: true },
+            scrollTrigger: { trigger: image, start: 'top 72%', once: true },
           });
           gsap.fromTo(image, { yPercent: -7 }, {
             yPercent: 7,
@@ -141,31 +121,36 @@ export default function PortfolioMotion({ scopeRef }) {
         });
       });
 
-      const contactItems = scope.querySelectorAll('.contact-inner > *');
-      if (contactItems.length) {
-        gsap.fromTo(contactItems, { y: 84, autoAlpha: 0, filter: 'blur(12px)' }, {
+      scope.querySelectorAll(textGroupSelector).forEach((group, groupIndex) => {
+        const candidates = [...group.querySelectorAll(textElementSelector)].filter((item) => (
+          !item.closest('.section-display-title, .section-index')
+          && !item.matches('.section-heading > .eyebrow')
+        ));
+        const textItems = candidates.filter(
+          (item) => !candidates.some((parent) => parent !== item && parent.contains(item)),
+        );
+        if (!textItems.length) return;
+        gsap.set(textItems, {
+          x: groupIndex % 2 ? 72 : -72,
+          y: 94,
+          scale: 0.86,
+          autoAlpha: 0,
+          filter: 'blur(20px)',
+          clipPath: 'inset(0 0 58% 0)',
+        });
+        gsap.to(textItems, {
+          x: 0,
           y: 0,
+          scale: 1,
           autoAlpha: 1,
           filter: 'blur(0px)',
-          duration: 1.45,
-          stagger: 0.16,
-          ease: 'power4.out',
-          scrollTrigger: { trigger: '.contact', start: 'top 76%', once: true },
-        });
-      }
-
-      const flowMenuItems = scope.querySelectorAll('.archive-flow-heading > *, .flowing-menu-item');
-      if (flowMenuItems.length) {
-        gsap.fromTo(flowMenuItems, { xPercent: -18, autoAlpha: 0, filter: 'blur(14px)' }, {
-          xPercent: 0,
-          autoAlpha: 1,
-          filter: 'blur(0px)',
-          duration: 1.45,
-          stagger: 0.12,
+          clipPath: 'inset(0 0 0% 0)',
+          duration: 1.5,
+          stagger: 0.09,
           ease: 'expo.out',
-          scrollTrigger: { trigger: '.archive-flow-section', start: 'top 78%', once: true },
+          scrollTrigger: { trigger: group, start: 'top 66%', once: true },
         });
-      }
+      });
     }, scope);
 
     return () => context.revert();
