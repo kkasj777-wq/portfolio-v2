@@ -451,7 +451,7 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .contact-grid-lines { mask-image: radial-gradient(circle at 70% 50%, black, transparent 60%); }
 .contact-inner { position: relative; z-index: 1; padding: 140px 7vw 60px; }
 .contact h2 { max-width: 1200px; font-size: clamp(58px, 7vw, 120px); font-weight: 400; line-height: 1.05; letter-spacing: -.06em; }
-.contact h2 em { color: inherit; -webkit-text-stroke: 0; font-style: normal; }
+.contact h2 em { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.5); font-style: normal; }
 .contact-inner > p { margin-top: 32px; color: #7e8693; font-size: .78rem; letter-spacing: .13em; }
 .contact-email { --flow-radius: 12px; width: max-content; max-width: 100%; display: flex; align-items: center; gap: 36px; margin-top: 46px; padding: 14px 18px; border: 1px solid rgba(79,245,233,.34); border-radius: 12px; background: rgba(7,25,28,.34); color: var(--cyan); font-size: clamp(13px,1.25vw,21px); letter-spacing: .06em; transition: border-color .3s ease,background .3s ease; }
 .contact-email svg { transition: transform .3s var(--ease); }
@@ -802,8 +802,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   inset: 0;
   width: 100%;
   height: 100dvh;
-  opacity: .72;
-  filter: saturate(1.2) contrast(1.12) brightness(.94);
+  opacity: .32;
+  filter: saturate(.78) contrast(.92) brightness(.62);
   transition: opacity .45s ease;
 }
 .portfolio-liquid-layer::after {
@@ -814,8 +814,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   width: 100%;
   height: 100dvh;
   background:
-    linear-gradient(90deg,rgba(2,8,11,.09),transparent 38%,rgba(2,8,11,.06)),
-    linear-gradient(180deg,rgba(3,9,12,.02),rgba(3,9,12,.12));
+    linear-gradient(90deg,rgba(2,8,11,.34),transparent 42%,rgba(2,8,11,.28)),
+    linear-gradient(180deg,rgba(3,9,12,.26),rgba(3,9,12,.48));
 }
 .portfolio-stage-content { position: relative; z-index: 1; background: transparent; }
 .modal-liquid-layer { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; opacity: .62; }
@@ -825,17 +825,29 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .project-modal .project-atmosphere { background-color: transparent; background: radial-gradient(circle at 16% 4%,color-mix(in srgb,var(--project-accent) 14%,transparent),transparent 36%),radial-gradient(circle at 86% 92%,color-mix(in srgb,var(--project-accent-2) 12%,transparent),transparent 42%),rgba(5,7,11,.34); }
 .episode-drawer { background: radial-gradient(circle at 78% 6%,rgba(79,245,233,.09),transparent 30%),linear-gradient(145deg,rgba(8,19,27,.86),rgba(8,9,16,.9) 58%,rgba(18,11,27,.86)); backdrop-filter: blur(18px) saturate(120%); }
 .portfolio-stage .section {
-  background-color: transparent;
+  background-color: rgba(4,9,14,.66);
   background-image:
-    radial-gradient(ellipse 84% 64% at 4% 8%,color-mix(in srgb,var(--chapter-wash-a) 34%,transparent),transparent 66%),
-    radial-gradient(ellipse 74% 60% at 96% 86%,color-mix(in srgb,var(--chapter-wash-b) 30%,transparent),transparent 68%),
-    linear-gradient(180deg,rgba(3,9,13,.07),rgba(3,9,13,.13));
+    radial-gradient(ellipse 84% 64% at 4% 8%,color-mix(in srgb,var(--chapter-wash-a) 22%,transparent),transparent 66%),
+    radial-gradient(ellipse 74% 60% at 96% 86%,color-mix(in srgb,var(--chapter-wash-b) 18%,transparent),transparent 68%),
+    linear-gradient(155deg,color-mix(in srgb,var(--chapter-top) 72%,transparent),color-mix(in srgb,var(--chapter-bottom) 68%,transparent));
 }
-.portfolio-stage .section::after { opacity: .07; }
+.portfolio-stage .section::before { opacity: .06; animation: none; }
+.portfolio-stage .section::after { opacity: .04; animation: none; }
 body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; }
 
 .hero h1 > span,
 .hero h1 > em { will-change: transform, opacity; }
+
+
+.portfolio-text-reveal {
+  opacity: 0;
+  transform: translate3d(0,42px,0);
+  transition:
+    opacity .95s cubic-bezier(.2,.7,.2,1) var(--text-reveal-delay,0ms),
+    transform 1.18s cubic-bezier(.16,1,.3,1) var(--text-reveal-delay,0ms);
+  will-change: transform,opacity;
+}
+.portfolio-text-reveal.is-text-visible { opacity: 1; transform: translate3d(0,0,0); }
 
 .portfolio-stage .section-heading,
 .portfolio-stage .series-portals > button,
@@ -903,9 +915,9 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .portfolio-stage .contact {
   background-color: transparent;
   background-image:
-    radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.1),transparent 67%),
-    radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.08),transparent 70%),
-    linear-gradient(180deg,rgba(3,12,14,.06),rgba(3,10,13,.16));
+    radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.08),transparent 67%),
+    radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.07),transparent 70%),
+    linear-gradient(180deg,rgba(3,12,14,.6),rgba(3,10,13,.72));
 }
 .contact-orb { background: radial-gradient(circle at 40% 40%,rgba(79,245,233,.34),rgba(138,116,255,.22) 32%,transparent 66%); }
 .contact-orb { animation: contact-orb-drift 14s ease-in-out infinite alternate; }
@@ -1176,7 +1188,7 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .commercial-numbers div { min-height: 120px; padding: 18px; }
   .episode-selector .episode-tab { flex-basis: 150px; }
   .episode-drawer .episode-selector .episode-tab { flex-basis: auto; }
-  .portfolio-liquid-layer .liquid-chrome-container { opacity: .4; filter: brightness(.8); }
+  .portfolio-liquid-layer .liquid-chrome-container { opacity: .22; filter: saturate(.7) contrast(.9) brightness(.58); }
   .modal-video-label { align-items: flex-start; flex-direction: column; gap: 7px; }
   .modal-video-label em { max-width: 100%; text-align: left; }
   .modal-credit-row { gap: 22px !important; }
@@ -1240,5 +1252,6 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .portfolio-text-reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

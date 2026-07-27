@@ -10,7 +10,7 @@ import LiquidChrome from './components/LiquidChrome';
 import PortfolioMotion from './components/PortfolioMotion';
 import ClickPulse from './components/ClickPulse';
 
-const portfolioChromeColor = [0.025, 0.105, 0.135];
+const portfolioChromeColor = [0.018, 0.065, 0.08];
 const modalChromeColor = [0.035, 0.095, 0.13];
 
 const asset = (path = '') => {
@@ -564,21 +564,21 @@ function PortfolioStage({ children, paused = false }) {
       <div className="portfolio-liquid-layer" aria-hidden="true">
         <LiquidChrome
           baseColor={portfolioChromeColor}
-          speed={isMobile ? 0.34 : 0.66}
-          amplitude={isMobile ? 0.42 : 0.62}
-          frequencyX={2.2}
-          frequencyY={1.4}
-          interactive={!isMobile}
+          speed={isMobile ? 0.18 : 0.3}
+          amplitude={isMobile ? 0.18 : 0.28}
+          frequencyX={1.7}
+          frequencyY={1.15}
+          interactive={false}
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
       <MagicBento
         className="portfolio-stage-content"
         enableStars
-        enableSpotlight
+        enableSpotlight={false}
         enableBorderGlow
-        enableTilt
-        enableMagnetism
+        enableTilt={false}
+        enableMagnetism={false}
         clickEffect
         spotlightRadius={300}
         particleCount={7}
@@ -1457,7 +1457,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>作品集 V8 / © 2026 王陈鑫</span>
+          <span>作品集 V8.1 / © 2026 王陈鑫</span>
         </div>
       </div>
     </footer>
