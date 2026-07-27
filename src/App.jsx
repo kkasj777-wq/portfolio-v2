@@ -6,11 +6,12 @@ import originalScripts from './data/scripts.json';
 import StarBorder from './components/StarBorder';
 import PillNav from './components/PillNav';
 import MagicBento from './components/MagicBento';
-import RippleGrid from './components/RippleGrid';
+import LiquidChrome from './components/LiquidChrome';
 import PortfolioMotion from './components/PortfolioMotion';
 import ScrollReveal from './components/ScrollReveal';
-import ScrollStack, { ScrollStackItem } from './components/ScrollStack';
 import ClickPulse from './components/ClickPulse';
+
+const portfolioChromeColor = [0.025, 0.105, 0.135];
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
@@ -23,7 +24,6 @@ const featuredIds = [
   'tongyoulu',
   'maimai',
   'ai_miaoxu',
-  'naicha',
   'mufeng',
   'xiayan',
   'fanjiagxiang',
@@ -549,20 +549,14 @@ function PortfolioStage({ children, paused = false }) {
 
   return (
     <div className="portfolio-stage" ref={stageRef}>
-      <div className="portfolio-ripple-layer" aria-hidden="true">
-        <RippleGrid
-          gridColor="#4ff5e9"
-          rippleIntensity={isMobile ? 0.075 : 0.12}
-          gridSize={isMobile ? 10 : 13}
-          gridThickness={isMobile ? 12 : 9}
-          fadeDistance={2.35}
-          vignetteStrength={1.05}
-          glowIntensity={isMobile ? 0.14 : 0.28}
-          opacity={isMobile ? 0.48 : 0.78}
-          gridRotation={14}
-          mouseInteraction={!isMobile}
-          mouseInteractionRadius={1.45}
-          speed={isMobile ? 0.36 : 0.56}
+      <div className="portfolio-liquid-layer" aria-hidden="true">
+        <LiquidChrome
+          baseColor={portfolioChromeColor}
+          speed={isMobile ? 0.34 : 0.66}
+          amplitude={isMobile ? 0.42 : 0.62}
+          frequencyX={2.2}
+          frequencyY={1.4}
+          interactive={!isMobile}
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
@@ -1290,28 +1284,9 @@ function Works({ works, onSelect }) {
           </>
         )}
 
-        {view === 'featured' ? (
-          <ScrollStack
-            className="work-scroll-stack"
-            itemDistance={110}
-            itemScale={0.014}
-            itemStackDistance={26}
-            stackPosition={118}
-            baseScale={0.86}
-            rotationAmount={0.18}
-            blurAmount={0.36}
-          >
-            {visibleWorks.map((work, index) => (
-              <ScrollStackItem itemClassName={`stack-tone-${(index % 3) + 1}`} key={work.id}>
-                {renderWorkCard(work, index)}
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
-        ) : (
-          <div className="work-grid is-archive">
-            {visibleWorks.map(renderWorkCard)}
-          </div>
-        )}
+        <div className={`work-grid ${view === 'featured' ? 'is-featured' : 'is-archive'}`}>
+          {visibleWorks.map(renderWorkCard)}
+        </div>
 
         {view === 'all' && visibleCount < selectedGrid.length && (
           <StarBorder

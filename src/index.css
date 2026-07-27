@@ -778,29 +778,29 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   --chapter-wash-b: rgba(126,79,217,.22);
 }
 
-/* React Bits RippleGrid stays visible behind the complete archive below the video hero. */
+/* React Bits LiquidChrome stays visible behind every archive section below the video hero. */
 .portfolio-stage {
   position: relative;
   isolation: isolate;
   background: #030b12;
 }
-.portfolio-ripple-layer {
+.portfolio-liquid-layer {
   position: absolute;
   z-index: 0;
   inset: 0;
   overflow: clip;
   pointer-events: none;
 }
-.portfolio-ripple-layer .ripple-grid-container {
+.portfolio-liquid-layer .liquid-chrome-container {
   position: sticky;
   top: 0;
   width: 100%;
   height: 100dvh;
-  opacity: .82;
-  filter: saturate(1.15) contrast(1.08);
+  opacity: .62;
+  filter: saturate(1.12) contrast(1.08) brightness(.86);
   transition: opacity .45s ease;
 }
-.portfolio-ripple-layer::after {
+.portfolio-liquid-layer::after {
   content: '';
   position: sticky;
   top: 0;
@@ -809,8 +809,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   height: 100dvh;
   margin-top: -100dvh;
   background:
-    radial-gradient(circle at 12% 25%,rgba(3,20,27,.06),transparent 42%),
-    linear-gradient(180deg,rgba(2,7,11,.02),rgba(2,7,11,.16));
+    linear-gradient(90deg,rgba(2,8,11,.16),transparent 38%,rgba(2,8,11,.1)),
+    linear-gradient(180deg,rgba(3,9,12,.03),rgba(3,9,12,.2));
 }
 .portfolio-stage-content { position: relative; z-index: 1; }
 .portfolio-stage .section {
@@ -827,7 +827,7 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
     );
 }
 .portfolio-stage .section::after { opacity: .12; }
-body.modal-open .portfolio-ripple-layer .ripple-grid-container { opacity: .22; }
+body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; }
 
 .hero h1 > span,
 .hero h1 > em,
@@ -839,7 +839,6 @@ body.modal-open .portfolio-ripple-layer .ripple-grid-container { opacity: .22; }
 .portfolio-stage .section-heading,
 .portfolio-stage .series-portals > button,
 .portfolio-stage .work-grid > article,
-.portfolio-stage .work-scroll-stack .work-card,
 .portfolio-stage .writing-feature,
 .portfolio-stage .writing-methods > article,
 .portfolio-stage .script-library-grid > article,
@@ -852,38 +851,6 @@ body.modal-open .portfolio-ripple-layer .ripple-grid-container { opacity: .22; }
   transform-style: preserve-3d;
   will-change: transform, opacity, clip-path;
 }
-
-.work-scroll-stack {
-  width: calc(100% - 92px);
-  margin-left: 92px;
-  padding-top: 20px;
-}
-.work-scroll-stack .scroll-stack-card {
-  min-height: clamp(500px,54vw,730px);
-  padding: 12px;
-  border: 1px solid rgba(120,255,247,.18);
-  border-radius: 26px;
-  background: linear-gradient(145deg,rgba(6,34,44,.95),rgba(5,14,24,.97) 58%,rgba(15,25,48,.96));
-  box-shadow: 0 38px 100px rgba(0,0,0,.46),inset 0 1px rgba(255,255,255,.07),0 0 50px rgba(79,245,233,.07);
-}
-.work-scroll-stack .scroll-stack-card.stack-tone-2 { background: linear-gradient(145deg,rgba(16,30,57,.96),rgba(7,19,29,.97) 58%,rgba(20,16,48,.95)); }
-.work-scroll-stack .scroll-stack-card.stack-tone-3 { background: linear-gradient(145deg,rgba(8,43,38,.95),rgba(5,19,26,.97) 58%,rgba(17,25,51,.96)); }
-.work-scroll-stack .work-card {
-  display: grid;
-  grid-template-columns: minmax(0,1.55fr) minmax(290px,.62fr);
-  grid-template-rows: auto auto auto 1fr;
-  gap: 0 clamp(30px,4vw,72px);
-  width: 100%;
-  height: 100%;
-  padding: clamp(12px,1.4vw,22px);
-  border-radius: 18px;
-}
-.work-scroll-stack .work-image { grid-column: 1; grid-row: 1 / 6; height: 100%; min-height: 470px; aspect-ratio: auto; }
-.work-scroll-stack .work-meta { grid-column: 2; align-self: end; margin-top: clamp(80px,10vw,150px); }
-.work-scroll-stack .work-card h3 { grid-column: 2; margin-top: 24px; font-size: clamp(32px,3.6vw,60px); line-height: 1.04; }
-.work-scroll-stack .work-card > p { grid-column: 2; margin-top: 18px; font-size: .86rem; }
-.work-scroll-stack .work-card-slogan { grid-column: 2; align-self: end; margin: 30px 0 18px; font-size: .74rem; line-height: 1.8; }
-.work-scroll-stack .view-work { opacity: 1; transform: none; }
 
 .section .section-heading {
   position: relative;
@@ -1051,7 +1018,6 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .hero-metrics { position: static; width: max-content; margin-top: 52px; }
   .section-heading { grid-template-columns: 64px 1.25fr 1fr; }
   .about-layout, .work-grid, .strength-grid { padding-left: 64px; }
-  .work-scroll-stack { width: calc(100% - 64px); margin-left: 64px; }
   .writing-feature, .writing-methods, .script-library, .writing-archive, .confidential-note { margin-left: 64px; }
   .work-filters, .experience-list, .award-strip { margin-left: 64px; }
   .archive-switch, .series-portals, .commercial-overview, .redfruit-strip { margin-left: 64px; }
@@ -1088,13 +1054,6 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .section-heading { display: grid; grid-template-columns: 34px 1fr; gap: 16px; margin-bottom: 58px; }
   .section-heading > p { grid-column: 2; margin-top: 8px; padding-left: 0; border-left: 0; }
   .about-layout, .work-grid, .strength-grid { padding-left: 0; }
-  .work-scroll-stack { width: 100%; margin-left: 0; }
-  .work-scroll-stack .scroll-stack-card { min-height: 0; }
-  .work-scroll-stack .work-card { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .work-scroll-stack .work-image { grid-column: 1; grid-row: auto; min-height: 0; aspect-ratio: 16/10; }
-  .work-scroll-stack .work-meta,.work-scroll-stack .work-card h3,.work-scroll-stack .work-card > p,.work-scroll-stack .work-card-slogan { grid-column: 1; }
-  .work-scroll-stack .work-meta { margin-top: 18px; }
-  .work-scroll-stack .work-card-slogan { margin-top: 18px; }
   .writing-feature { grid-template-columns: 1fr; margin-left: 0; }
   .writing-still { min-height: min(72vw,560px); }
   .writing-still::after { background: linear-gradient(0deg,rgba(3,5,8,.58),transparent 48%); }
@@ -1229,7 +1188,7 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .commercial-numbers div { min-height: 120px; padding: 18px; }
   .episode-selector .episode-tab { flex-basis: 150px; }
   .episode-drawer .episode-selector .episode-tab { flex-basis: auto; }
-  .portfolio-ripple-layer .ripple-grid-container { opacity: .46; filter: none; }
+  .portfolio-liquid-layer .liquid-chrome-container { opacity: .4; filter: brightness(.8); }
   .modal-video-label { align-items: flex-start; flex-direction: column; gap: 7px; }
   .modal-video-label em { max-width: 100%; text-align: left; }
   .modal-credit-row { gap: 22px !important; }

@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 const cardSelector = [
   '.series-portals > button',
   '.work-grid > article',
-  '.work-scroll-stack .work-card',
   '.writing-feature',
   '.writing-methods > article',
   '.script-library-grid > article',
@@ -17,6 +16,27 @@ const cardSelector = [
   '.experience-list > article',
   '.award-strip > article',
   '.strength-grid > article',
+].join(',');
+
+const textRevealSelector = [
+  '.section-heading > p',
+  '.work-card .work-meta',
+  '.work-card h3',
+  '.work-card > p',
+  '.work-card-slogan',
+  '.series-portal-copy > *',
+  '.writing-copy > *',
+  '.writing-methods article > *',
+  '.script-library-heading > *',
+  '.script-card > *:not(.magic-bento-glow-layer)',
+  '.commercial-numbers > *',
+  '.redfruit-strip button > strong',
+  '.redfruit-strip button > small',
+  '.about-copy > *',
+  '.about-data > div',
+  '.experience-list article > *',
+  '.award-strip article > *',
+  '.strength-grid article > *:not(.corner):not(.magic-bento-glow-layer)',
 ].join(',');
 
 export default function PortfolioMotion({ scopeRef }) {
@@ -79,6 +99,25 @@ export default function PortfolioMotion({ scopeRef }) {
           });
         }
 
+        const textItems = section.querySelectorAll(textRevealSelector);
+        if (textItems.length) {
+          gsap.fromTo(textItems, {
+            y: 58,
+            autoAlpha: 0,
+            filter: 'blur(10px)',
+            clipPath: 'inset(0 0 38% 0)',
+          }, {
+            y: 0,
+            autoAlpha: 1,
+            filter: 'blur(0px)',
+            clipPath: 'inset(0 0 0% 0)',
+            duration: 1.25,
+            stagger: 0.065,
+            ease: 'power4.out',
+            scrollTrigger: { trigger: textItems[0], start: 'top 84%', once: true },
+          });
+        }
+
         section.querySelectorAll('img').forEach((image) => {
           gsap.fromTo(image, { clipPath: 'inset(0 0 100% 0)', scale: 1.22, yPercent: 12 }, {
             clipPath: 'inset(0 0 0% 0)',
@@ -95,6 +134,19 @@ export default function PortfolioMotion({ scopeRef }) {
           });
         });
       });
+
+      const contactItems = scope.querySelectorAll('.contact-inner > *');
+      if (contactItems.length) {
+        gsap.fromTo(contactItems, { y: 84, autoAlpha: 0, filter: 'blur(12px)' }, {
+          y: 0,
+          autoAlpha: 1,
+          filter: 'blur(0px)',
+          duration: 1.45,
+          stagger: 0.16,
+          ease: 'power4.out',
+          scrollTrigger: { trigger: '.contact', start: 'top 76%', once: true },
+        });
+      }
     }, scope);
 
     return () => context.revert();
