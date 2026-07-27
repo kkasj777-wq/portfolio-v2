@@ -1,0 +1,28 @@
+.scroll-stack {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-stack-inner {
+  position: relative;
+  padding-bottom: 22vh;
+}
+
+.scroll-stack-card {
+  position: relative;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, filter;
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .scroll-stack-inner {
+    padding-bottom: 0;
+  }
+
+  .scroll-stack-card {
+    transform: none !important;
+    filter: none !important;
+  }
+}

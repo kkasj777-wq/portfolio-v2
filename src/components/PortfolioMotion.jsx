@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const cardSelector = [
   '.series-portals > button',
   '.work-grid > article',
+  '.work-scroll-stack .work-card',
   '.writing-feature',
   '.writing-methods > article',
   '.script-library-grid > article',
@@ -43,11 +44,9 @@ export default function PortfolioMotion({ scopeRef }) {
             defaults: { ease: 'expo.out' },
           });
           headingTimeline
-            .fromTo(heading, { xPercent: -9, scale: 0.94, autoAlpha: 0 }, { xPercent: 0, scale: 1, autoAlpha: 1, duration: 1.5 })
-            .fromTo(heading.querySelector('.section-display-title'), { xPercent: -115, scaleX: 0.38, transformOrigin: 'left center', autoAlpha: 0, clipPath: 'inset(0 100% 0 0)' }, { xPercent: 0, scaleX: 1, autoAlpha: 1, clipPath: 'inset(0 0% 0 0)', duration: 2.25 }, 0.05)
+            .fromTo(heading.querySelector('.section-display-title'), { xPercent: -115, scaleX: 0.38, transformOrigin: 'left center', autoAlpha: 0, clipPath: 'inset(0 100% 0 0)' }, { xPercent: 0, scaleX: 1, autoAlpha: 1, clipPath: 'inset(0 0% 0 0)', duration: 2.25 })
             .fromTo(heading.querySelector('.section-index'), { x: -120, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.25 }, 0.26)
-            .fromTo(heading.querySelector('.eyebrow'), { x: -150, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.4 }, 0.18)
-            .fromTo(heading.querySelector('h2'), { y: 190, scaleX: 0.46, transformOrigin: 'left center', clipPath: 'inset(0 0 100% 0)' }, { y: 0, scaleX: 1, clipPath: 'inset(0 0 0% 0)', duration: 1.9 }, 0.28);
+            .fromTo(heading.querySelector('.eyebrow'), { x: -150, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.4 }, 0.18);
           const description = heading.querySelector(':scope > p');
           if (description) headingTimeline.fromTo(description, { y: 90, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.35 }, 0.68);
         }

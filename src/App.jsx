@@ -6,10 +6,11 @@ import originalScripts from './data/scripts.json';
 import StarBorder from './components/StarBorder';
 import PillNav from './components/PillNav';
 import MagicBento from './components/MagicBento';
-import LiquidChrome from './components/LiquidChrome';
+import RippleGrid from './components/RippleGrid';
 import PortfolioMotion from './components/PortfolioMotion';
-
-const portfolioChromeColor = [0.025, 0.105, 0.135];
+import ScrollReveal from './components/ScrollReveal';
+import ScrollStack, { ScrollStackItem } from './components/ScrollStack';
+import ClickPulse from './components/ClickPulse';
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
@@ -551,14 +552,20 @@ function PortfolioStage({ children, paused = false }) {
 
   return (
     <div className="portfolio-stage" ref={stageRef}>
-      <div className="portfolio-liquid-layer" aria-hidden="true">
-        <LiquidChrome
-          baseColor={portfolioChromeColor}
-          speed={isMobile ? 0.46 : 0.68}
-          amplitude={isMobile ? 0.48 : 0.66}
-          frequencyX={2.15}
-          frequencyY={1.35}
-          interactive={!isMobile}
+      <div className="portfolio-ripple-layer" aria-hidden="true">
+        <RippleGrid
+          gridColor="#4ff5e9"
+          rippleIntensity={isMobile ? 0.075 : 0.12}
+          gridSize={isMobile ? 10 : 13}
+          gridThickness={isMobile ? 12 : 9}
+          fadeDistance={2.35}
+          vignetteStrength={1.05}
+          glowIntensity={isMobile ? 0.14 : 0.28}
+          opacity={isMobile ? 0.48 : 0.78}
+          gridRotation={14}
+          mouseInteraction={!isMobile}
+          mouseInteractionRadius={1.45}
+          speed={isMobile ? 0.36 : 0.56}
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
@@ -806,7 +813,7 @@ function SectionHeading({ index, eyebrow, title, description }) {
       <div className="section-index">{index}</div>
       <div>
         <span className="eyebrow">{eyebrow}</span>
-        <h2>{title}</h2>
+        <ScrollReveal>{title}</ScrollReveal>
       </div>
       {description && <p>{description}</p>}
     </header>
@@ -1174,6 +1181,38 @@ function Works({ works, onSelect }) {
     setVisibleCount(12);
   }, [category, view]);
 
+  const renderWorkCard = (work, index) => (
+    <article
+      className={`work-card flow-card work-card-${(index % 6) + 1}`}
+      key={work.id}
+    >
+      <button
+        type="button"
+        className="work-card-trigger"
+        aria-label={`查看项目：${work.title}`}
+        onClick={() => onSelect(work)}
+      />
+      <div className="work-image">
+        <img
+          src={asset(coverOverrides[work.id] || work.thumb)}
+          alt={work.title}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="work-scan" />
+        {!!work.episodes?.length && <span className="episode-badge">{work.episodes.length} EP</span>}
+        <span className="view-work">VIEW CASE <ArrowIcon /></span>
+      </div>
+      <div className="work-meta">
+        <span>{String(index + 1).padStart(2, '0')} / {work.category}</span>
+        <span>{work.year || '2026'}</span>
+      </div>
+      <h3>{work.title}</h3>
+      <p>{work.sub || work.role}</p>
+      <blockquote className="work-card-slogan">“{work.slogan}”</blockquote>
+    </article>
+  );
+
   return (
     <section className="section works" id="works">
       <div className="page-shell">
@@ -1254,39 +1293,28 @@ function Works({ works, onSelect }) {
           </>
         )}
 
-        <div className={`work-grid ${view === 'all' ? 'is-archive' : 'is-featured'}`}>
-          {visibleWorks.map((work, index) => (
-            <article
-              className={`work-card flow-card work-card-${(index % 6) + 1}`}
-              key={work.id}
-            >
-              <button
-                type="button"
-                className="work-card-trigger"
-                aria-label={`查看项目：${work.title}`}
-                onClick={() => onSelect(work)}
-              />
-              <div className="work-image">
-                <img
-                  src={asset(coverOverrides[work.id] || work.thumb)}
-                  alt={work.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="work-scan" />
-                {!!work.episodes?.length && <span className="episode-badge">{work.episodes.length} EP</span>}
-                <span className="view-work">VIEW CASE <ArrowIcon /></span>
-              </div>
-              <div className="work-meta">
-                <span>{String(index + 1).padStart(2, '0')} / {work.category}</span>
-                <span>{work.year || '2026'}</span>
-              </div>
-              <h3>{work.title}</h3>
-              <p>{work.sub || work.role}</p>
-              <blockquote className="work-card-slogan">“{work.slogan}”</blockquote>
-            </article>
-          ))}
-        </div>
+        {view === 'featured' ? (
+          <ScrollStack
+            className="work-scroll-stack"
+            itemDistance={110}
+            itemScale={0.014}
+            itemStackDistance={26}
+            stackPosition={118}
+            baseScale={0.86}
+            rotationAmount={0.18}
+            blurAmount={0.36}
+          >
+            {visibleWorks.map((work, index) => (
+              <ScrollStackItem itemClassName={`stack-tone-${(index % 3) + 1}`} key={work.id}>
+                {renderWorkCard(work, index)}
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        ) : (
+          <div className="work-grid is-archive">
+            {visibleWorks.map(renderWorkCard)}
+          </div>
+        )}
 
         {view === 'all' && visibleCount < selectedGrid.length && (
           <StarBorder
@@ -1430,7 +1458,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>© 2026 WANG CHENXIN</span>
+          <span>PORTFOLIO V4 / © 2026 WANG CHENXIN</span>
         </div>
       </div>
     </footer>
@@ -2070,6 +2098,7 @@ export default function App() {
   return (
     <div className="app" ref={appRef}>
       <PortfolioMotion scopeRef={appRef} />
+      <ClickPulse />
       <AmbientField />
       <FlowVisibility />
       <Navigation />
