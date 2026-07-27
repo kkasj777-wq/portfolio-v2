@@ -788,16 +788,14 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   inset: 0;
   overflow: clip;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom,transparent 0,black 2.5%,black 97.5%,transparent 100%);
-  mask-image: linear-gradient(to bottom,transparent 0,black 2.5%,black 97.5%,transparent 100%);
 }
 .portfolio-liquid-layer .liquid-chrome-container {
   position: sticky;
   top: 0;
   width: 100%;
   height: 100dvh;
-  opacity: 1;
-  filter: saturate(1.28) contrast(1.12) brightness(.92);
+  opacity: .58;
+  filter: saturate(1.16) contrast(1.08) brightness(.86);
   transition: opacity .45s ease;
 }
 .portfolio-liquid-layer::after {
