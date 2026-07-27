@@ -6,8 +6,10 @@ import originalScripts from './data/scripts.json';
 import StarBorder from './components/StarBorder';
 import PillNav from './components/PillNav';
 import MagicBento from './components/MagicBento';
-import Balatro from './components/Balatro';
+import LiquidChrome from './components/LiquidChrome';
 import PortfolioMotion from './components/PortfolioMotion';
+
+const portfolioChromeColor = [0.025, 0.105, 0.135];
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
@@ -549,20 +551,14 @@ function PortfolioStage({ children, paused = false }) {
 
   return (
     <div className="portfolio-stage" ref={stageRef}>
-      <div className="portfolio-balatro-layer" aria-hidden="true">
-        <Balatro
-          color1="#17376f"
-          color2="#0a7776"
-          color3="#071315"
-          spinRotation={-1.75}
-          spinSpeed={isMobile ? 2.1 : 2.8}
-          spinAmount={0.2}
-          spinEase={0.72}
-          contrast={4.15}
-          lighting={0.24}
-          pixelFilter={isMobile ? 900 : 1750}
-          isRotate
-          mouseInteraction={!isMobile}
+      <div className="portfolio-liquid-layer" aria-hidden="true">
+        <LiquidChrome
+          baseColor={portfolioChromeColor}
+          speed={isMobile ? 0.46 : 0.68}
+          amplitude={isMobile ? 0.48 : 0.66}
+          frequencyX={2.15}
+          frequencyY={1.35}
+          interactive={!isMobile}
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
@@ -770,7 +766,7 @@ function Hero({ onPlayShowreel, showreelOpen }) {
             aria-haspopup="dialog"
             aria-controls="showreel-dialog"
           >
-            <span className="action-play-icon" aria-hidden="true">▶</span> 播放 15S SHOWREEL
+            <span className="action-play-icon" aria-hidden="true">▶</span> 播放 45S SHOWREEL
           </StarBorder>
           <StarBorder
             as="a"
@@ -792,10 +788,10 @@ function Hero({ onPlayShowreel, showreelOpen }) {
         </div>
       </div>
 
-      <button type="button" className="reel-counter flow-hit" onClick={onPlayShowreel} aria-label="播放 15 秒 SHOWREEL">
+      <button type="button" className="reel-counter flow-hit" onClick={onPlayShowreel} aria-label="播放 45 秒 SHOWREEL">
         <span>SHOWREEL</span>
         <i><b style={{ width: '100%' }} /></i>
-        <span>15S</span>
+        <span>45S</span>
       </button>
       <a className="scroll-cue flow-hit" href="#works"><span /> ENTER THE ARCHIVE</a>
     </section>
@@ -1516,8 +1512,8 @@ function ShowreelModal({ onClose, returnFocus }) {
     togglePlayback();
   };
 
-  const elapsed = String(Math.min(15, Math.floor(currentTime))).padStart(2, '0');
-  const progress = `${Math.min(100, (currentTime / 15) * 100)}%`;
+  const elapsed = String(Math.min(45, Math.floor(currentTime))).padStart(2, '0');
+  const progress = `${Math.min(100, (currentTime / 45) * 100)}%`;
 
   return (
     <div
@@ -1534,7 +1530,7 @@ function ShowreelModal({ onClose, returnFocus }) {
       <div className="showreel-shell">
         <header className="showreel-header">
           <div>
-            <span>DIRECTOR SHOWREEL / 15 SEC</span>
+            <span>DIRECTOR SHOWREEL / 45 SEC</span>
             <h2 id="showreel-title">先看作品，再认识创作者。</h2>
           </div>
           <p id="showreel-summary">《崖佛不语，岁岁佑我》《通幽录》《手电》联合剪辑<br />点击画面暂停或继续，声音可独立控制。</p>
@@ -1556,9 +1552,9 @@ function ShowreelModal({ onClose, returnFocus }) {
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
-            aria-label={`${isPlaying ? '暂停' : pausedPrompt} 15 秒 SHOWREEL`}
+            aria-label={`${isPlaying ? '暂停' : pausedPrompt} 45 秒 SHOWREEL`}
           >
-            <source src={asset('assets/video/showreel-15s.mp4')} type="video/mp4" />
+            <source src={asset('assets/video/showreel-45s.mp4')} type="video/mp4" />
           </video>
           <span className="modal-play-state" aria-hidden="true">
             <i>{isPlaying ? 'Ⅱ' : '▶'}</i>
@@ -1582,7 +1578,7 @@ function ShowreelModal({ onClose, returnFocus }) {
         <div className="showreel-progress">
           <span>{isPlaying ? 'PLAYING' : 'PAUSED'}</span>
           <i><b style={{ width: progress }} /></i>
-          <time>00:{elapsed} / 00:15</time>
+          <time>00:{elapsed} / 00:45</time>
         </div>
         <footer className="showreel-credit">
           <span>FEATURED WORK / 03 FILMS</span>
@@ -2086,9 +2082,9 @@ export default function App() {
           <About />
           <Experience />
           <Strengths />
+          <Contact />
         </PortfolioStage>
       </main>
-      <Contact />
       {showreelOpen && (
         <ShowreelModal
           returnFocus={showreelOpenerRef.current}

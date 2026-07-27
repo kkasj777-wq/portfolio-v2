@@ -776,13 +776,13 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   --chapter-wash-b: rgba(126,79,217,.22);
 }
 
-/* React Bits Balatro becomes the moving archive atmosphere below the video hero. */
+/* React Bits LiquidChrome becomes the moving archive atmosphere below the video hero. */
 .portfolio-stage {
   position: relative;
   isolation: isolate;
-  background: #061014;
+  background: #031013;
 }
-.portfolio-balatro-layer {
+.portfolio-liquid-layer {
   position: absolute;
   z-index: 0;
   inset: 0;
@@ -791,16 +791,16 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   -webkit-mask-image: linear-gradient(to bottom,transparent 0,black 2.5%,black 97.5%,transparent 100%);
   mask-image: linear-gradient(to bottom,transparent 0,black 2.5%,black 97.5%,transparent 100%);
 }
-.portfolio-balatro-layer .balatro-container {
+.portfolio-liquid-layer .liquid-chrome-container {
   position: sticky;
   top: 0;
   width: 100%;
   height: 100dvh;
-  opacity: .92;
-  filter: saturate(.82) contrast(1.12) brightness(.9);
+  opacity: 1;
+  filter: saturate(1.28) contrast(1.12) brightness(.92);
   transition: opacity .45s ease;
 }
-.portfolio-balatro-layer::after {
+.portfolio-liquid-layer::after {
   content: '';
   position: sticky;
   top: 0;
@@ -809,8 +809,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   height: 100dvh;
   margin-top: -100dvh;
   background:
-    linear-gradient(90deg,rgba(2,8,11,.45),transparent 36%,rgba(2,8,11,.28)),
-    linear-gradient(180deg,rgba(3,9,12,.18),rgba(3,9,12,.5));
+    linear-gradient(90deg,rgba(2,8,11,.22),transparent 38%,rgba(2,8,11,.12)),
+    linear-gradient(180deg,rgba(3,9,12,.06),rgba(3,9,12,.24));
 }
 .portfolio-stage-content { position: relative; z-index: 1; }
 .portfolio-stage .section {
@@ -821,19 +821,35 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
     linear-gradient(118deg,transparent 0 45%,rgba(255,255,255,.022) 50%,transparent 55%),
     linear-gradient(
       155deg,
-      color-mix(in srgb,var(--chapter-top) 48%,transparent) 0%,
-      color-mix(in srgb,var(--chapter-bottom) 44%,transparent) 58%,
-      color-mix(in srgb,var(--chapter-bottom) 42%,transparent) 100%
+      color-mix(in srgb,var(--chapter-top) 27%,transparent) 0%,
+      color-mix(in srgb,var(--chapter-bottom) 23%,transparent) 58%,
+      color-mix(in srgb,var(--chapter-bottom) 21%,transparent) 100%
     );
 }
-.portfolio-stage .section::after { opacity: .19; }
-body.modal-open .portfolio-balatro-layer .balatro-container { opacity: .24; }
+.portfolio-stage .section::after { opacity: .12; }
+body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .24; }
 
 .hero h1 > span,
 .hero h1 > em,
 .section-heading h2,
 .portfolio-stage .section img {
   will-change: transform, clip-path;
+}
+
+.portfolio-stage .section-heading,
+.portfolio-stage .series-portals > button,
+.portfolio-stage .work-grid > article,
+.portfolio-stage .writing-feature,
+.portfolio-stage .writing-methods > article,
+.portfolio-stage .script-library-grid > article,
+.portfolio-stage .commercial-overview > *,
+.portfolio-stage .redfruit-strip > *,
+.portfolio-stage .about-layout > *,
+.portfolio-stage .experience-list > article,
+.portfolio-stage .award-strip > article,
+.portfolio-stage .strength-grid > article {
+  transform-style: preserve-3d;
+  will-change: transform, opacity, clip-path;
 }
 
 .section .section-heading {
@@ -895,6 +911,13 @@ body.modal-open .portfolio-balatro-layer .balatro-container { opacity: .24; }
     radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.30),transparent 67%),
     radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.22),transparent 70%),
     linear-gradient(135deg,#07191b 0%,#0b1720 48%,#121126 100%);
+}
+.portfolio-stage .contact {
+  background-color: transparent;
+  background-image:
+    radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.16),transparent 67%),
+    radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.13),transparent 70%),
+    linear-gradient(180deg,rgba(3,12,14,.08),rgba(3,10,13,.34));
 }
 .contact-orb { background: radial-gradient(circle at 40% 40%,rgba(79,245,233,.34),rgba(138,116,255,.22) 32%,transparent 66%); }
 .contact-orb { animation: contact-orb-drift 14s ease-in-out infinite alternate; }
