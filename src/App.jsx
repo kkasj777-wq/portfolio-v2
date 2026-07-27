@@ -8,10 +8,7 @@ import PillNav from './components/PillNav';
 import MagicBento from './components/MagicBento';
 import LiquidChrome from './components/LiquidChrome';
 import PortfolioMotion from './components/PortfolioMotion';
-import ScrollReveal from './components/ScrollReveal';
 import ClickPulse from './components/ClickPulse';
-import AnimatedContent from './components/AnimatedContent';
-import FlowingMenu from './components/FlowingMenu';
 
 const portfolioChromeColor = [0.025, 0.105, 0.135];
 const modalChromeColor = [0.035, 0.095, 0.13];
@@ -526,12 +523,24 @@ function PortfolioStage({ children, paused = false }) {
   useEffect(() => {
     const stage = stageRef.current;
     if (!stage) return undefined;
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
-      rootMargin: '-80px 0px',
-      threshold: 0,
-    });
-    observer.observe(stage);
-    return () => observer.disconnect();
+    let frame = 0;
+    const updateVisibility = () => {
+      frame = 0;
+      const rect = stage.getBoundingClientRect();
+      setIsVisible(rect.top < window.innerHeight && rect.bottom > 0);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateVisibility);
+    };
+
+    updateVisibility();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+    };
   }, []);
 
   useEffect(() => {
@@ -551,7 +560,7 @@ function PortfolioStage({ children, paused = false }) {
   }, []);
 
   return (
-    <div className="portfolio-stage" ref={stageRef}>
+    <div className={`portfolio-stage${isVisible ? ' is-background-visible' : ''}`} ref={stageRef}>
       <div className="portfolio-liquid-layer" aria-hidden="true">
         <LiquidChrome
           baseColor={portfolioChromeColor}
@@ -814,20 +823,15 @@ function Hero({ onPlayShowreel, showreelOpen }) {
   );
 }
 
-function SectionHeading({ index, eyebrow, title, description }) {
-  const displayTitle = eyebrow.split('/')[0].trim();
+function SectionHeading({ index, title, description }) {
   return (
     <header className="section-heading">
-      <b className="section-display-title" aria-hidden="true">{displayTitle}</b>
       <div className="section-index">{index}</div>
-      <div>
-        <span className="eyebrow">{eyebrow}</span>
-        <ScrollReveal>{title}</ScrollReveal>
-      </div>
+      <h2>{title}</h2>
       {description && (
-        <AnimatedContent className="section-description-motion" direction="horizontal" distance={130} duration={1.45} delay={0.18}>
+        <div className="section-description-motion">
           <p>{description}</p>
-        </AnimatedContent>
+        </div>
       )}
     </header>
   );
@@ -857,12 +861,10 @@ function About() {
             <p className="about-lead">
               我首先是一个讲故事的人。导演让我组织画面，编剧让我理解人物。
             </p>
-            <AnimatedContent className="about-body-motion" distance={90} duration={1.35} delay={0.1}>
-              <p className="about-body">
-                我的创作从世界观、人物小传和分场大纲开始，再进入分镜、场面调度、AI 镜头生成与后期节奏。
-                技术可以提高产能，但角色动机、情绪递进与叙事取舍必须由创作者负责。
-              </p>
-            </AnimatedContent>
+            <p className="about-body">
+              我的创作从世界观、人物小传和分场大纲开始，再进入分镜、场面调度、AI 镜头生成与后期节奏。
+              技术可以提高产能，但角色动机、情绪递进与叙事取舍必须由创作者负责。
+            </p>
 
             <div className="about-data">
               <div><small>身份</small><span>导演 / 编剧 / AI 影像创作者</span></div>
@@ -1429,7 +1431,7 @@ function Strengths() {
         <div className="strength-grid">
           {strengths.map((item) => (
             <article key={item.no}>
-              <div className="strength-top"><span>{item.no}</span><small>{item.en}</small></div>
+              <div className="strength-top"><span>{item.no}</span></div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <ul>{item.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
@@ -1442,38 +1444,20 @@ function Strengths() {
   );
 }
 
-function ArchiveFlowMenu() {
-  const items = [
-    { link: '#works', text: '导演作品', meta: 'DIRECTING ARCHIVE', image: asset('assets/frames/yafobuyu/frame_06.jpg') },
-    { link: '#writing', text: '原创剧本', meta: 'SCREENWRITING', image: asset('assets/frames/tongyoulu/ep03/frame_02.jpg') },
-    { link: '#commercial', text: '商业现场', meta: 'ON-SET PRACTICE', image: asset('assets/img/naicha/still_01.jpg') },
-    { link: '#contact', text: '联系合作', meta: 'START A PROJECT', image: asset('assets/frames/shoudian/frame_07.jpg') },
-  ];
-  return (
-    <section className="archive-flow-section" aria-labelledby="archive-flow-title">
-      <div className="page-shell archive-flow-heading">
-        <span>QUICK INDEX / FLOWING MENU</span>
-        <h2 id="archive-flow-title">从这里进入下一段作品。</h2>
-      </div>
-      <FlowingMenu items={items} speed={17} />
-    </section>
-  );
-}
-
 function Contact() {
   return (
     <footer className="contact" id="contact">
       <div className="contact-orb" />
       <div className="contact-grid-lines" />
       <div className="page-shell contact-inner">
-        <span className="eyebrow">CONTACT / START A PROJECT</span>
+        <span className="eyebrow">联系合作</span>
         <h2>故事已经开始。<br /><em>下一镜，一起完成。</em></h2>
         <p>原创剧本 · 剧情短片 · AI 系列剧 · 商业短剧</p>
         <a className="contact-email flow-hit" href="mailto:3146652776@qq.com" aria-label="发送邮件至 3146652776@qq.com">EMAIL / 3146652776@qq.com</a>
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>PORTFOLIO V7 / © 2026 WANG CHENXIN</span>
+          <span>作品集 V8 / © 2026 王陈鑫</span>
         </div>
       </div>
     </footer>
@@ -2129,7 +2113,6 @@ export default function App() {
           <About />
           <Experience />
           <Strengths />
-          <ArchiveFlowMenu />
           <Contact />
         </PortfolioStage>
       </main>

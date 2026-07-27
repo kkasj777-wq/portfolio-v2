@@ -369,8 +369,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .work-image { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #11151c; }
 .work-card-1 .work-image, .work-card-6 .work-image { aspect-ratio: 16 / 8.2; }
 .work-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,4,7,.62), transparent 46%); opacity: .4; transition: opacity .5s ease; }
-.work-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(1.05); transition: transform .9s var(--ease), filter .6s ease; }
-.work-card:hover .work-image img, .work-card:focus .work-image img { transform: scale(1.045); filter: saturate(1) contrast(1.04); }
+.work-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; filter: saturate(.8) contrast(1.03); transition: filter .6s ease; }
+.work-card:hover .work-image img, .work-card:focus .work-image img { filter: saturate(1) contrast(1.03); }
 .work-card:hover .work-image::after { opacity: .75; }
 .work-scan { position: absolute; z-index: 2; inset: -100% 0 auto; height: 60%; background: linear-gradient(transparent, rgba(79,245,233,.07), transparent); transition: transform .8s ease; }
 .work-card:hover .work-scan { transform: translateY(300%); }
@@ -450,8 +450,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .contact-orb { position: absolute; width: min(70vw,1000px); aspect-ratio: 1; right: -14%; top: 50%; transform: translateY(-50%); border-radius: 50%; background: radial-gradient(circle at 40% 40%, rgba(79,245,233,.18), rgba(138,116,255,.12) 28%, transparent 62%); filter: blur(5px); }
 .contact-grid-lines { mask-image: radial-gradient(circle at 70% 50%, black, transparent 60%); }
 .contact-inner { position: relative; z-index: 1; padding: 140px 7vw 60px; }
-.contact h2 { max-width: 1200px; font-size: clamp(64px, 8.8vw, 154px); font-weight: 400; line-height: .98; letter-spacing: -.07em; }
-.contact h2 em { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.42); font-style: normal; }
+.contact h2 { max-width: 1200px; font-size: clamp(58px, 7vw, 120px); font-weight: 400; line-height: 1.05; letter-spacing: -.06em; }
+.contact h2 em { color: inherit; -webkit-text-stroke: 0; font-style: normal; }
 .contact-inner > p { margin-top: 32px; color: #7e8693; font-size: .78rem; letter-spacing: .13em; }
 .contact-email { --flow-radius: 12px; width: max-content; max-width: 100%; display: flex; align-items: center; gap: 36px; margin-top: 46px; padding: 14px 18px; border: 1px solid rgba(79,245,233,.34); border-radius: 12px; background: rgba(7,25,28,.34); color: var(--cyan); font-size: clamp(13px,1.25vw,21px); letter-spacing: .06em; transition: border-color .3s ease,background .3s ease; }
 .contact-email svg { transition: transform .3s var(--ease); }
@@ -573,11 +573,11 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .archive-switch button strong { color: #555e6c; font-size: 1.05rem; font-weight: 400; }
 .archive-switch button.is-active { color: #04100f; background: linear-gradient(120deg,#84fff6,#35dcd3); box-shadow: 0 12px 36px rgba(79,245,233,.14); }
 .archive-switch button.is-active strong { color: rgba(3,13,12,.62); }
-.series-portals { display: grid; grid-template-columns: 1.18fr .82fr; gap: 16px; margin: 0 0 82px 92px; }
-.series-portals > button { position: relative; min-height: 560px; overflow: hidden; padding: 0; border: 1px solid rgba(255,255,255,.14); border-radius: 22px; background: #080b10; color: #fff; cursor: pointer; text-align: left; box-shadow: inset 0 1px rgba(255,255,255,.08),0 28px 70px rgba(0,0,0,.23); }
-.series-portals > button:nth-child(2) { min-height: 500px; margin-top: 60px; }
-.series-portals img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.7) contrast(1.06); transition: transform 1.1s var(--ease),filter .5s ease; }
-.series-portals button:hover img { transform: scale(1.045); filter: saturate(.92) contrast(1.05); }
+.series-portals { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin: 0 0 82px 92px; }
+.series-portals > button { position: relative; min-height: 540px; overflow: hidden; padding: 0; border: 1px solid rgba(255,255,255,.14); border-radius: 22px; background: #061016; color: #fff; cursor: pointer; text-align: left; box-shadow: inset 0 1px rgba(255,255,255,.08),0 28px 70px rgba(0,0,0,.23); }
+.series-portals > button:nth-child(2) { min-height: 540px; margin-top: 0; }
+.series-portals img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: saturate(.8) contrast(1.04); transition: filter .5s ease; }
+.series-portals button:hover img { filter: saturate(.98) contrast(1.04); }
 .series-portal-shade { position: absolute; inset: 0; background: linear-gradient(0deg,rgba(4,6,9,.96),transparent 62%),linear-gradient(90deg,rgba(4,6,9,.38),transparent 48%); }
 .series-portal-index { position: absolute; top: 24px; left: 26px; color: var(--cyan); font-size: .55rem; letter-spacing: .16em; }
 .series-portal-copy { position: absolute; right: 28px; bottom: 30px; left: 28px; display: flex; flex-direction: column; }
@@ -787,34 +787,37 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
   background: #030b12;
 }
 .portfolio-liquid-layer {
-  position: absolute;
+  position: fixed;
   z-index: 0;
   inset: 0;
-  overflow: clip;
+  overflow: hidden;
   pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .55s ease, visibility .55s ease;
 }
+.portfolio-stage.is-background-visible .portfolio-liquid-layer { visibility: visible; opacity: 1; }
 .portfolio-liquid-layer .liquid-chrome-container {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100dvh;
-  opacity: .62;
-  filter: saturate(1.12) contrast(1.08) brightness(.86);
+  opacity: .72;
+  filter: saturate(1.2) contrast(1.12) brightness(.94);
   transition: opacity .45s ease;
 }
 .portfolio-liquid-layer::after {
   content: '';
-  position: sticky;
-  top: 0;
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100dvh;
-  margin-top: -100dvh;
   background:
-    linear-gradient(90deg,rgba(2,8,11,.16),transparent 38%,rgba(2,8,11,.1)),
-    linear-gradient(180deg,rgba(3,9,12,.03),rgba(3,9,12,.2));
+    linear-gradient(90deg,rgba(2,8,11,.09),transparent 38%,rgba(2,8,11,.06)),
+    linear-gradient(180deg,rgba(3,9,12,.02),rgba(3,9,12,.12));
 }
-.portfolio-stage-content { position: relative; z-index: 1; }
+.portfolio-stage-content { position: relative; z-index: 1; background: transparent; }
 .modal-liquid-layer { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; opacity: .62; }
 .modal-liquid-layer .liquid-chrome-container { width: 100%; height: 100%; filter: saturate(1.08) contrast(1.06) brightness(.8); }
 .script-modal-shell { background: linear-gradient(145deg,rgba(8,17,24,.82),rgba(8,9,17,.86) 58%,rgba(17,10,28,.82)); }
@@ -824,25 +827,15 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .portfolio-stage .section {
   background-color: transparent;
   background-image:
-    radial-gradient(ellipse 84% 64% at 4% 8%,color-mix(in srgb,var(--chapter-wash-a) 68%,transparent),transparent 66%),
-    radial-gradient(ellipse 74% 60% at 96% 86%,color-mix(in srgb,var(--chapter-wash-b) 64%,transparent),transparent 68%),
-    linear-gradient(118deg,transparent 0 45%,rgba(255,255,255,.022) 50%,transparent 55%),
-    linear-gradient(
-      155deg,
-      color-mix(in srgb,var(--chapter-top) 27%,transparent) 0%,
-      color-mix(in srgb,var(--chapter-bottom) 23%,transparent) 58%,
-      color-mix(in srgb,var(--chapter-bottom) 21%,transparent) 100%
-    );
+    radial-gradient(ellipse 84% 64% at 4% 8%,color-mix(in srgb,var(--chapter-wash-a) 34%,transparent),transparent 66%),
+    radial-gradient(ellipse 74% 60% at 96% 86%,color-mix(in srgb,var(--chapter-wash-b) 30%,transparent),transparent 68%),
+    linear-gradient(180deg,rgba(3,9,13,.07),rgba(3,9,13,.13));
 }
-.portfolio-stage .section::after { opacity: .12; }
+.portfolio-stage .section::after { opacity: .07; }
 body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; }
 
 .hero h1 > span,
-.hero h1 > em,
-.section-heading h2,
-.portfolio-stage .section img {
-  will-change: transform, clip-path;
-}
+.hero h1 > em { will-change: transform, opacity; }
 
 .portfolio-stage .section-heading,
 .portfolio-stage .series-portals > button,
@@ -857,7 +850,7 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .portfolio-stage .award-strip > article,
 .portfolio-stage .strength-grid > article {
   transform-style: preserve-3d;
-  will-change: transform, opacity, clip-path;
+  will-change: transform, opacity;
 }
 
 .section .section-heading {
@@ -870,22 +863,7 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
   background: linear-gradient(90deg,color-mix(in srgb,var(--section-accent) 12%,transparent),rgba(255,255,255,.018) 48%,transparent 88%);
   box-shadow: inset 0 1px rgba(255,255,255,.045),0 18px 54px rgba(0,0,0,.12);
 }
-.section .section-heading > :not(.section-display-title) { position: relative; z-index: 1; }
-.section-display-title {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 90px;
-  color: color-mix(in srgb,var(--section-accent) 22%,white);
-  font-size: clamp(68px,8.4vw,150px);
-  font-weight: 700;
-  line-height: .78;
-  letter-spacing: -.075em;
-  white-space: nowrap;
-  opacity: .09;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
+.section .section-heading > * { position: relative; z-index: 1; }
 
 /* The project surfaces inherit their chapter color instead of falling back to black. */
 .works .archive-switch { background: rgba(7,29,40,.72); border-color: rgba(84,224,229,.20); }
@@ -914,11 +892,6 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .strengths .strength-grid article:nth-child(odd) { border-color: rgba(79,245,233,.34); box-shadow: inset 0 1px rgba(129,255,247,.08),0 22px 58px rgba(0,0,0,.16),0 0 34px rgba(46,204,191,.06); }
 .strengths .strength-grid article:nth-child(even) { border-color: rgba(148,115,241,.34); box-shadow: inset 0 1px rgba(189,169,255,.08),0 22px 58px rgba(0,0,0,.16),0 0 34px rgba(122,85,218,.07); }
 
-.archive-flow-section { position: relative; padding: 130px 0 0; border-top: 1px solid rgba(101,255,245,.14); background: linear-gradient(180deg,rgba(4,13,18,.08),rgba(4,11,17,.32)); }
-.archive-flow-heading { padding-bottom: 58px; }
-.archive-flow-heading span { color: var(--cyan); font-size: .56rem; letter-spacing: .19em; }
-.archive-flow-heading h2 { max-width: 950px; margin-top: 18px; font-size: clamp(42px,5vw,84px); font-weight: 400; line-height: 1.05; letter-spacing: -.055em; }
-
 .contact {
   border-top-color: rgba(79,245,233,.25);
   background-color: #071719;
@@ -930,9 +903,9 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .portfolio-stage .contact {
   background-color: transparent;
   background-image:
-    radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.16),transparent 67%),
-    radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.13),transparent 70%),
-    linear-gradient(180deg,rgba(3,12,14,.08),rgba(3,10,13,.34));
+    radial-gradient(ellipse 76% 70% at 88% 42%,rgba(44,190,190,.1),transparent 67%),
+    radial-gradient(ellipse 58% 54% at 18% 86%,rgba(111,75,207,.08),transparent 70%),
+    linear-gradient(180deg,rgba(3,12,14,.06),rgba(3,10,13,.16));
 }
 .contact-orb { background: radial-gradient(circle at 40% 40%,rgba(79,245,233,.34),rgba(138,116,255,.22) 32%,transparent 66%); }
 .contact-orb { animation: contact-orb-drift 14s ease-in-out infinite alternate; }
