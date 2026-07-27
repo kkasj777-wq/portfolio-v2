@@ -10,8 +10,11 @@ import LiquidChrome from './components/LiquidChrome';
 import PortfolioMotion from './components/PortfolioMotion';
 import ScrollReveal from './components/ScrollReveal';
 import ClickPulse from './components/ClickPulse';
+import AnimatedContent from './components/AnimatedContent';
+import FlowingMenu from './components/FlowingMenu';
 
 const portfolioChromeColor = [0.025, 0.105, 0.135];
+const modalChromeColor = [0.035, 0.095, 0.13];
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
@@ -577,6 +580,21 @@ function PortfolioStage({ children, paused = false }) {
   );
 }
 
+function ModalLiquidBackdrop() {
+  return (
+    <div className="modal-liquid-layer" aria-hidden="true">
+      <LiquidChrome
+        baseColor={modalChromeColor}
+        speed={0.48}
+        amplitude={0.5}
+        frequencyX={2.3}
+        frequencyY={1.45}
+        interactive={false}
+      />
+    </div>
+  );
+}
+
 function ProjectAtmosphere({ work, episode, preset }) {
   const episodeMeta = episode
     ? `EP ${String(episode.ep || 1).padStart(2, '0')} / ${episode.title}`
@@ -806,7 +824,11 @@ function SectionHeading({ index, eyebrow, title, description }) {
         <span className="eyebrow">{eyebrow}</span>
         <ScrollReveal>{title}</ScrollReveal>
       </div>
-      {description && <p>{description}</p>}
+      {description && (
+        <AnimatedContent className="section-description-motion" direction="horizontal" distance={130} duration={1.45} delay={0.18}>
+          <p>{description}</p>
+        </AnimatedContent>
+      )}
     </header>
   );
 }
@@ -835,10 +857,12 @@ function About() {
             <p className="about-lead">
               我首先是一个讲故事的人。导演让我组织画面，编剧让我理解人物。
             </p>
-            <p className="about-body">
-              我的创作从世界观、人物小传和分场大纲开始，再进入分镜、场面调度、AI 镜头生成与后期节奏。
-              技术可以提高产能，但角色动机、情绪递进与叙事取舍必须由创作者负责。
-            </p>
+            <AnimatedContent className="about-body-motion" distance={90} duration={1.35} delay={0.1}>
+              <p className="about-body">
+                我的创作从世界观、人物小传和分场大纲开始，再进入分镜、场面调度、AI 镜头生成与后期节奏。
+                技术可以提高产能，但角色动机、情绪递进与叙事取舍必须由创作者负责。
+              </p>
+            </AnimatedContent>
 
             <div className="about-data">
               <div><small>身份</small><span>导演 / 编剧 / AI 影像创作者</span></div>
@@ -918,6 +942,7 @@ function ScriptModal({ script, onClose, returnFocus }) {
   return (
     <div ref={modalRef} className="script-modal" role="dialog" aria-modal="true" aria-label={`${script.title} 剧本档案`}>
       <button type="button" className="script-modal-backdrop" onClick={onClose} aria-label="关闭剧本档案" tabIndex="-1" />
+      <ModalLiquidBackdrop />
       <div className="script-modal-shell">
         <header className="script-modal-hero">
           <div className="script-modal-code">
@@ -1417,6 +1442,24 @@ function Strengths() {
   );
 }
 
+function ArchiveFlowMenu() {
+  const items = [
+    { link: '#works', text: '导演作品', meta: 'DIRECTING ARCHIVE', image: asset('assets/frames/yafobuyu/frame_06.jpg') },
+    { link: '#writing', text: '原创剧本', meta: 'SCREENWRITING', image: asset('assets/frames/tongyoulu/ep03/frame_02.jpg') },
+    { link: '#commercial', text: '商业现场', meta: 'ON-SET PRACTICE', image: asset('assets/img/naicha/still_01.jpg') },
+    { link: '#contact', text: '联系合作', meta: 'START A PROJECT', image: asset('assets/frames/shoudian/frame_07.jpg') },
+  ];
+  return (
+    <section className="archive-flow-section" aria-labelledby="archive-flow-title">
+      <div className="page-shell archive-flow-heading">
+        <span>QUICK INDEX / FLOWING MENU</span>
+        <h2 id="archive-flow-title">从这里进入下一段作品。</h2>
+      </div>
+      <FlowingMenu items={items} speed={17} />
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <footer className="contact" id="contact">
@@ -1430,7 +1473,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>PORTFOLIO V5 / © 2026 WANG CHENXIN</span>
+          <span>PORTFOLIO V6 / © 2026 WANG CHENXIN</span>
         </div>
       </div>
     </footer>
@@ -1527,6 +1570,7 @@ function ShowreelModal({ onClose, returnFocus }) {
       ref={modalRef}
     >
       <button type="button" className="modal-backdrop" onClick={onClose} aria-label="关闭 SHOWREEL" tabIndex="-1" />
+      <ModalLiquidBackdrop />
       <div className="showreel-shell">
         <header className="showreel-header">
           <div>
@@ -1766,6 +1810,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
       aria-label={work.title}
     >
       <button type="button" className="modal-backdrop" onClick={onClose} aria-label="关闭项目详情" tabIndex="-1" />
+      <ModalLiquidBackdrop />
       <ProjectAtmosphere work={work} episode={selectedEpisode} preset={atmosphere} />
       <StarBorder
         as="button"
@@ -1839,22 +1884,20 @@ function ProjectModal({ work, onClose, returnFocus }) {
                 {episodes.map((episode, index) => {
                   const isActive = index === episodeIndex;
                   return (
-                    <StarBorder
-                      as="button"
+                    <button
                       type="button"
                       className={`episode-tab ${isActive ? 'is-active' : ''}`}
-                      color={isActive ? '#9efff8' : '#4f9d99'}
-                      speed={isActive ? '3.2s' : '5.6s'}
-                      thickness={isActive ? 2 : 1}
                       aria-pressed={isActive}
                       aria-label={`查看${episode.title}的 ${work.id === 'tongyoulu' ? '30' : '15'} 秒作品预览`}
                       key={`${episode.title}-${index}`}
                       onClick={() => selectEpisode(index)}
                     >
-                      <img src={asset(episode.titleCard || episode.frames?.[0] || work.thumb)} alt="" loading="lazy" decoding="async" />
-                      <span>EP {String(index + 1).padStart(2, '0')}</span>
-                      <strong>{episode.title.replace(/^第\d+集\s*·?\s*/, '') || `第${index + 1}集`}</strong>
-                    </StarBorder>
+                      <span className="episode-tab-inner">
+                        <img src={asset(episode.titleCard || episode.frames?.[0] || work.thumb)} alt="" loading="lazy" decoding="async" />
+                        <span>EP {String(index + 1).padStart(2, '0')}</span>
+                        <strong>{episode.title.replace(/^第\d+集\s*·?\s*/, '') || `第${index + 1}集`}</strong>
+                      </span>
+                    </button>
                   );
                 })}
               </div>
@@ -2086,6 +2129,7 @@ export default function App() {
           <About />
           <Experience />
           <Strengths />
+          <ArchiveFlowMenu />
           <Contact />
         </PortfolioStage>
       </main>

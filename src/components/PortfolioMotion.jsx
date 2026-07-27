@@ -19,7 +19,6 @@ const cardSelector = [
 ].join(',');
 
 const textRevealSelector = [
-  '.section-heading > p',
   '.work-card .work-meta',
   '.work-card h3',
   '.work-card > p',
@@ -32,11 +31,16 @@ const textRevealSelector = [
   '.commercial-numbers > *',
   '.redfruit-strip button > strong',
   '.redfruit-strip button > small',
-  '.about-copy > *',
+  '.about-lead',
   '.about-data > div',
+  '.tool-stack > *',
+  '.tool-stack li',
+  '.writing-copy dl > div',
+  '.writing-numbers > div',
   '.experience-list article > *',
   '.award-strip article > *',
   '.strength-grid article > *:not(.corner):not(.magic-bento-glow-layer)',
+  '.strength-grid li',
 ].join(',');
 
 export default function PortfolioMotion({ scopeRef }) {
@@ -102,17 +106,19 @@ export default function PortfolioMotion({ scopeRef }) {
         const textItems = section.querySelectorAll(textRevealSelector);
         if (textItems.length) {
           gsap.fromTo(textItems, {
-            y: 58,
+            y: 86,
+            scale: 0.94,
             autoAlpha: 0,
-            filter: 'blur(10px)',
-            clipPath: 'inset(0 0 38% 0)',
+            filter: 'blur(16px)',
+            clipPath: 'inset(0 0 52% 0)',
           }, {
             y: 0,
+            scale: 1,
             autoAlpha: 1,
             filter: 'blur(0px)',
             clipPath: 'inset(0 0 0% 0)',
-            duration: 1.25,
-            stagger: 0.065,
+            duration: 1.55,
+            stagger: 0.075,
             ease: 'power4.out',
             scrollTrigger: { trigger: textItems[0], start: 'top 84%', once: true },
           });
@@ -145,6 +151,19 @@ export default function PortfolioMotion({ scopeRef }) {
           stagger: 0.16,
           ease: 'power4.out',
           scrollTrigger: { trigger: '.contact', start: 'top 76%', once: true },
+        });
+      }
+
+      const flowMenuItems = scope.querySelectorAll('.archive-flow-heading > *, .flowing-menu-item');
+      if (flowMenuItems.length) {
+        gsap.fromTo(flowMenuItems, { xPercent: -18, autoAlpha: 0, filter: 'blur(14px)' }, {
+          xPercent: 0,
+          autoAlpha: 1,
+          filter: 'blur(0px)',
+          duration: 1.45,
+          stagger: 0.12,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: '.archive-flow-section', start: 'top 78%', once: true },
         });
       }
     }, scope);
