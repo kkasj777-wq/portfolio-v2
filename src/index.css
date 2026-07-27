@@ -656,6 +656,8 @@ body.modal-open footer .star-border-container > :is(.border-gradient-bottom, .bo
 .episode-drawer-heading span { color: var(--cyan); font-size: .5rem; letter-spacing: .18em; }
 .episode-drawer-heading h3 { margin-top: 8px; font-size: clamp(22px,2.2vw,34px); font-weight: 400; }
 .episode-drawer-heading p { color: #677583; font-size: .52rem; letter-spacing: .14em; }
+.episode-drawer-actions { display: flex; align-items: center; gap: 12px; }
+.episode-drawer-close { min-height: 34px; padding: 0 13px; border: 1px solid rgba(132,255,247,.24); border-radius: 999px; background: rgba(79,245,233,.07); color: #dffdfa; cursor: pointer; font: inherit; font-size: .54rem; letter-spacing: .08em; }
 .episode-drawer .episode-selector { margin-top: 20px; }
 @keyframes episode-drawer-in { from { opacity: 0; transform: translateY(-8px) scale(.99); } to { opacity: 1; transform: none; } }
 .episode-selector { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); align-items: stretch; gap: 8px; margin-top: 30px; }
@@ -1154,8 +1156,9 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
 
 @media (max-width: 580px) {
   :root { --shell: calc(100% - 32px); }
-  .section::before { animation-duration: 54s; }
+  .section::before,.flow-card::before,.flow-hit::before { animation: none !important; }
   .section::after { animation: none; opacity: .22; }
+  .contact-orb,.contact-grid-lines { animation: none; }
   .about .about-copy { padding: 26px; }
   .strength-grid ul { flex-wrap: wrap; }
   .project-modal { padding: 8px; }
@@ -1167,15 +1170,23 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .modal-close-copy small { font-size: .39rem; }
   .modal-close-icon { font-size: 1.35rem; }
   .modal-navigation { padding: 8px; }
-  .modal-navigation-bar { min-height: 88px; gap: 7px; padding-right: 124px; }
+  .modal-navigation { background: rgba(7,14,21,.985); backdrop-filter: none; }
+  .modal-navigation-bar { min-height: 88px; gap: 7px; padding-right: 0; }
+  .modal-project-chip { width: 100%; padding-right: 124px; }
   .modal-project-chip strong { font-size: .75rem; }
   .modal-project-chip span { font-size: .44rem; }
-  .modal-section-nav { width: calc(100% + 116px); margin-right: -116px; gap: 5px; padding-top: 7px; }
+  .modal-section-nav { width: 100%; margin-right: 0; gap: 5px; padding-top: 7px; padding-right: 0; }
   .modal-section-nav button { min-height: 34px; padding: 0 11px; font-size: .53rem; }
-  .episode-drawer { top: calc(100% + 5px); right: 4px; left: 4px; max-height: 68vh; padding: 14px; border-radius: 14px; }
+  .episode-menu-trigger { position: sticky; right: 0; z-index: 2; flex: 0 0 auto; background: rgba(8,30,34,.98) !important; }
+  .episode-drawer { position: fixed; z-index: 260; top: auto; right: 8px; bottom: max(8px,env(safe-area-inset-bottom)); left: 8px; max-height: min(72svh,620px); overscroll-behavior: contain; padding: 14px; border-radius: 18px; box-shadow: 0 -18px 80px rgba(0,0,0,.82),inset 0 1px rgba(255,255,255,.08); }
   .episode-drawer-heading { align-items: start; }
   .episode-drawer-heading h3 { font-size: 20px; }
   .episode-drawer-heading p { font-size: .44rem; }
+  .episode-drawer-actions { align-items: flex-end; flex-direction: column; gap: 7px; }
+  .episode-drawer-close { min-height: 32px; padding: 0 12px; }
+  .episode-drawer .episode-selector,.episode-drawer .episode-selector.is-long { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; overflow: visible; padding: 0 0 4px; scroll-snap-type: none; }
+  .episode-drawer .episode-selector .episode-tab { width: 100%; min-width: 0; flex-basis: auto; }
+  .episode-drawer .episode-selector .episode-tab > .inner-content { padding-bottom: 12px; }
   .modal-video { padding: 11px 10px 18px; }
   .modal-video-label { min-height: 0; }
   .modal-video-stage { border-radius: 10px; }
@@ -1217,7 +1228,8 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .commercial-numbers { min-height: 0; padding: 20px; }
   .commercial-numbers div { min-height: 120px; padding: 18px; }
   .episode-selector .episode-tab { flex-basis: 150px; }
-  .episode-drawer .episode-selector .episode-tab { flex-basis: 104px; }
+  .episode-drawer .episode-selector .episode-tab { flex-basis: auto; }
+  .portfolio-ripple-layer .ripple-grid-container { opacity: .46; filter: none; }
   .modal-video-label { align-items: flex-start; flex-direction: column; gap: 7px; }
   .modal-video-label em { max-width: 100%; text-align: left; }
   .modal-credit-row { gap: 22px !important; }

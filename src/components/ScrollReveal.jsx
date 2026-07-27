@@ -19,7 +19,11 @@ export default function ScrollReveal({
 
   useLayoutEffect(() => {
     const element = containerRef.current;
-    if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (
+      !element
+      || window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      || window.matchMedia('(max-width: 768px)').matches
+    ) return undefined;
 
     const context = gsap.context(() => {
       const words = element.querySelectorAll('.scroll-reveal-glyph');

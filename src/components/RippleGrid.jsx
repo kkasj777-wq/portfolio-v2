@@ -99,9 +99,10 @@ export default function RippleGrid({
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return undefined;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     const renderer = new Renderer({
-      dpr: Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 0.8 : 1.25),
+      dpr: Math.min(window.devicePixelRatio, isMobile ? 0.6 : 1.25),
       alpha: true,
       antialias: false,
     });
@@ -153,9 +154,12 @@ export default function RippleGrid({
     document.documentElement.addEventListener('pointerleave', onPointerLeave, { passive: true });
 
     let frame = 0;
+    let lastRender = 0;
     const render = (time) => {
       frame = requestAnimationFrame(render);
       if (pausedRef.current) return;
+      if (isMobile && time - lastRender < 33) return;
+      lastRender = time;
       current.x += (target.x - current.x) * 0.075;
       current.y += (target.y - current.y) * 0.075;
       current.influence += (target.influence - current.influence) * 0.045;

@@ -23,13 +23,10 @@ const featuredIds = [
   'tongyoulu',
   'maimai',
   'ai_miaoxu',
-  'ai_nianhua',
-  'jinyan',
   'naicha',
   'mufeng',
   'xiayan',
   'fanjiagxiang',
-  'qishuku',
   'zoumagang',
 ];
 
@@ -1458,7 +1455,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>PORTFOLIO V4 / © 2026 WANG CHENXIN</span>
+          <span>PORTFOLIO V5 / © 2026 WANG CHENXIN</span>
         </div>
       </div>
     </footer>
@@ -1858,7 +1855,10 @@ function ProjectModal({ work, onClose, returnFocus }) {
                   <span>EPISODE NAVIGATION</span>
                   <h3>选择要观看的分集</h3>
                 </div>
-                <p>{episodes.length} EPISODES</p>
+                <div className="episode-drawer-actions">
+                  <p>{episodes.length} EPISODES</p>
+                  <button type="button" className="episode-drawer-close" onClick={() => setEpisodeMenuOpen(false)}>关闭</button>
+                </div>
               </div>
               <div className={`episode-selector ${episodes.length > 10 ? 'is-long' : ''}`}>
                 {episodes.map((episode, index) => {

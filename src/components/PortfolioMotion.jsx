@@ -22,7 +22,11 @@ const cardSelector = [
 export default function PortfolioMotion({ scopeRef }) {
   useLayoutEffect(() => {
     const scope = scopeRef.current;
-    if (!scope || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (
+      !scope
+      || window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      || window.matchMedia('(max-width: 768px)').matches
+    ) return undefined;
 
     const context = gsap.context(() => {
       const opening = gsap.timeline({ defaults: { ease: 'expo.out' } });

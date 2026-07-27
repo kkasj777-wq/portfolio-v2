@@ -5,7 +5,10 @@ const interactiveSelector = 'button, a[href], [role="button"]';
 
 export default function ClickPulse() {
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      || window.matchMedia('(pointer: coarse)').matches
+    ) return undefined;
 
     const createPulse = (x, y, warm = false) => {
       const pulse = document.createElement('span');
