@@ -1,36 +1,33 @@
 import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const textRevealSelector = [
-  '.portfolio-stage .section-heading h2',
-  '.portfolio-stage .section-description-motion',
-  '.portfolio-stage .series-portal-copy',
-  '.portfolio-stage .work-card h3',
-  '.portfolio-stage .work-card > p',
-  '.portfolio-stage .work-card-slogan',
-  '.portfolio-stage .writing-copy h3',
-  '.portfolio-stage .writing-copy p',
-  '.portfolio-stage .writing-methods article h3',
-  '.portfolio-stage .writing-methods article p',
-  '.portfolio-stage .script-library-heading h3',
-  '.portfolio-stage .script-library-heading p',
-  '.portfolio-stage .script-card h4',
-  '.portfolio-stage .script-card p',
-  '.portfolio-stage .writing-archive-copy h3',
-  '.portfolio-stage .writing-archive-copy p',
-  '.portfolio-stage .commercial-lead-copy > *',
-  '.portfolio-stage .commercial-numbers p',
-  '.portfolio-stage .redfruit-strip button strong',
-  '.portfolio-stage .redfruit-strip button i',
-  '.portfolio-stage .about-lead',
-  '.portfolio-stage .about-body',
-  '.portfolio-stage .about-data',
-  '.portfolio-stage .experience-list article h3',
-  '.portfolio-stage .experience-list article p',
-  '.portfolio-stage .strength-grid article h3',
-  '.portfolio-stage .strength-grid article p',
-  '.portfolio-stage .contact-inner > *:not(.contact-meta)',
+gsap.registerPlugin(ScrollTrigger);
+
+const headingFrameSelector = '.portfolio-stage .section-heading';
+
+const contentFrameSelector = [
+  '.portfolio-stage .archive-switch',
+  '.portfolio-stage .series-portals > button',
+  '.portfolio-stage .work-filters',
+  '.portfolio-stage .archive-status',
+  '.portfolio-stage .work-grid > .work-card',
+  '.portfolio-stage .load-more',
+  '.portfolio-stage .writing-feature',
+  '.portfolio-stage .writing-methods',
+  '.portfolio-stage .script-library-heading',
+  '.portfolio-stage .script-library-grid > .script-card',
+  '.portfolio-stage .writing-archive',
+  '.portfolio-stage .commercial-overview > *',
+  '.portfolio-stage .redfruit-strip > button',
+  '.portfolio-stage .about-layout > *',
+  '.portfolio-stage .experience-list > article',
+  '.portfolio-stage .award-strip',
+  '.portfolio-stage .strength-grid > article',
+  '.portfolio-stage .contact-inner',
 ].join(',');
+
+const frameImageSelector = '.work-image img, .series-portals img, .writing-still img, .commercial-lead > img, .redfruit-frame img';
 
 export default function PortfolioMotion({ scopeRef }) {
   useLayoutEffect(() => {
@@ -40,7 +37,6 @@ export default function PortfolioMotion({ scopeRef }) {
     const loader = scope.querySelector('.page-loader');
     const counter = scope.querySelector('.page-loader-count');
     const progress = { value: 0 };
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const skipLoader = Boolean(window.location.hash && window.location.hash !== '#top');
     const interactiveRoots = [scope.querySelector('.pill-nav-container'), scope.querySelector('main')].filter(Boolean);
     const setPageInteractive = (interactive) => {
@@ -207,41 +203,247 @@ export default function PortfolioMotion({ scopeRef }) {
       scope,
     );
 
-    const textTargets = prefersReducedMotion ? [] : [...scope.querySelectorAll(textRevealSelector)];
-    textTargets.forEach((target, index) => {
-      target.classList.add('portfolio-text-reveal');
-      target.style.setProperty('--text-reveal-delay', `${(index % 4) * 70}ms`);
-    });
+    media.add(
+      {
+        isDesktop: '(min-width: 769px)',
+        isMobile: '(max-width: 768px)',
+        reduceMotion: '(prefers-reduced-motion: reduce)',
+      },
+      (context) => {
+        const { isMobile, reduceMotion } = context.conditions;
+        const allFrameSelector = `${headingFrameSelector},${contentFrameSelector}`;
+        const boundTargets = new Set();
+        const triggerByTarget = new Map();
+        const motionTriggers = new Set();
+        const pendingAddedNodes = new Set();
+        let mutationFrame = 0;
+        let active = true;
 
-    const pendingTargets = new Set(textTargets);
-    let frame = 0;
-    const revealVisibleText = () => {
-      frame = 0;
-      pendingTargets.forEach((target) => {
-        const rect = target.getBoundingClientRect();
-        if (rect.top >= window.innerHeight * 0.9 || rect.bottom <= 0) return;
-        target.classList.add('is-text-visible');
-        pendingTargets.delete(target);
+        const clearFrameStyles = (target) => {
+          gsap.killTweensOf(target);
+          const images = [...target.querySelectorAll(frameImageSelector)];
+          if (images.length) {
+            gsap.killTweensOf(images);
+            gsap.set(images, { clearProps: 'transform' });
+          }
+          gsap.set(target, { clearProps: 'transform,opacity,visibility,clipPath,transformOrigin,willChange' });
+          target.removeAttribute('data-portfolio-motion-bound');
+        };
+
+        const releaseTarget = (target) => {
+          const trigger = triggerByTarget.get(target);
+          if (trigger) {
+            trigger.kill();
+            motionTriggers.delete(trigger);
+            triggerByTarget.delete(target);
+          }
+          clearFrameStyles(target);
+          boundTargets.delete(target);
+        };
+
+        if (reduceMotion) {
+          scope.querySelectorAll(allFrameSelector).forEach(clearFrameStyles);
+          return undefined;
+        }
+
+        const bindHeadings = (targets) => {
+          targets.forEach((target) => {
+            if (boundTargets.has(target)) return;
+            boundTargets.add(target);
+            target.setAttribute('data-portfolio-motion-bound', 'heading');
+
+            const tween = gsap.fromTo(
+              target,
+              {
+                autoAlpha: 0,
+                xPercent: isMobile ? -4 : -8,
+                y: isMobile ? 24 : 36,
+                scaleX: isMobile ? 0.95 : 0.86,
+                clipPath: 'inset(0 100% 0 0)',
+                transformOrigin: 'left center',
+              },
+              {
+                autoAlpha: 1,
+                xPercent: 0,
+                y: 0,
+                scaleX: 1,
+                clipPath: 'inset(0 0% 0 0)',
+                duration: isMobile ? 0.9 : 1.28,
+                ease: 'expo.out',
+                onStart: () => {
+                  target.style.willChange = 'transform,opacity,clip-path';
+                },
+                clearProps: 'transform,opacity,visibility,clipPath,transformOrigin,willChange',
+                scrollTrigger: {
+                  trigger: target,
+                  start: 'top 86%',
+                  once: true,
+                },
+              },
+            );
+
+            if (tween.scrollTrigger) {
+              motionTriggers.add(tween.scrollTrigger);
+              triggerByTarget.set(target, tween.scrollTrigger);
+            }
+          });
+        };
+
+        const bindContentFrames = (targets) => {
+          const freshTargets = targets.filter((target) => !boundTargets.has(target));
+          if (!freshTargets.length) return;
+
+          freshTargets.forEach((target) => {
+            boundTargets.add(target);
+            target.setAttribute('data-portfolio-motion-bound', 'content');
+          });
+
+          gsap.set(
+            freshTargets,
+            isMobile
+              ? {
+                  autoAlpha: 0,
+                  y: 48,
+                  scale: 0.975,
+                  transformOrigin: '50% 85%',
+                }
+              : {
+                  autoAlpha: 0,
+                  y: 88,
+                  scale: 0.935,
+                  rotationX: 8,
+                  clipPath: 'inset(10% 0 0 0 round 20px)',
+                  transformPerspective: 1200,
+                  transformOrigin: '50% 85%',
+                },
+          );
+
+          const created = ScrollTrigger.batch(freshTargets, {
+            start: 'top 88%',
+            once: true,
+            interval: 0.12,
+            batchMax: isMobile ? 2 : 4,
+            onEnter: (batch) => {
+              const connectedBatch = batch.filter((target) => active && target.isConnected && scope.contains(target));
+              if (!connectedBatch.length) return;
+              gsap.set(connectedBatch, { willChange: isMobile ? 'transform,opacity' : 'transform,opacity,clip-path' });
+              gsap.to(connectedBatch, {
+                autoAlpha: 1,
+                y: 0,
+                scale: 1,
+                rotationX: 0,
+                clipPath: isMobile ? undefined : 'inset(0% 0 0 0 round 20px)',
+                duration: isMobile ? 0.82 : 1.12,
+                stagger: isMobile ? 0.08 : 0.11,
+                ease: 'power4.out',
+                overwrite: 'auto',
+                clearProps: 'transform,opacity,visibility,clipPath,transformOrigin,willChange',
+              });
+
+              const images = connectedBatch.flatMap((target) => [...target.querySelectorAll(frameImageSelector)]);
+              if (images.length) {
+                gsap.fromTo(
+                  images,
+                  { scale: isMobile ? 1.025 : 1.075 },
+                  {
+                    scale: 1,
+                    duration: isMobile ? 1 : 1.45,
+                    stagger: 0.025,
+                    ease: 'power3.out',
+                    overwrite: 'auto',
+                    clearProps: 'transform',
+                  },
+                );
+              }
+            },
+          });
+
+          created.forEach((trigger) => {
+            motionTriggers.add(trigger);
+            triggerByTarget.set(trigger.trigger, trigger);
+          });
+        };
+
+        const collectTargets = (node, selector) => {
+          if (!(node instanceof Element)) return [];
+          const targets = [];
+          if (node.matches(selector)) targets.push(node);
+          node.querySelectorAll(selector).forEach((target) => targets.push(target));
+          return targets;
+        };
+
+        const bindWithin = (node) => {
+          const headings = collectTargets(node, headingFrameSelector);
+          const frames = collectTargets(node, contentFrameSelector);
+          bindHeadings(headings);
+          bindContentFrames(frames);
+          return headings.length + frames.length;
+        };
+
+        const releaseWithin = (node) => {
+          if (!(node instanceof Element)) return;
+          const targets = [];
+          if (node.hasAttribute('data-portfolio-motion-bound')) targets.push(node);
+          node.querySelectorAll('[data-portfolio-motion-bound]').forEach((target) => targets.push(target));
+          targets.forEach(releaseTarget);
+        };
+
+        bindHeadings([...scope.querySelectorAll(headingFrameSelector)]);
+        bindContentFrames([...scope.querySelectorAll(contentFrameSelector)]);
+
+        const observer = new MutationObserver((records) => {
+          records.forEach((record) => {
+            record.removedNodes.forEach(releaseWithin);
+            record.addedNodes.forEach((node) => {
+              if (node instanceof Element) pendingAddedNodes.add(node);
+            });
+          });
+          if (!pendingAddedNodes.size || mutationFrame) return;
+          mutationFrame = window.requestAnimationFrame(() => {
+            mutationFrame = 0;
+            const addedNodes = [...pendingAddedNodes].filter((node) => node.isConnected && scope.contains(node));
+            pendingAddedNodes.clear();
+            const boundCount = addedNodes.reduce((count, node) => count + bindWithin(node), 0);
+            if (boundCount) ScrollTrigger.refresh();
+          });
+        });
+        observer.observe(scope, { childList: true, subtree: true });
+
+        document.fonts?.ready.then(() => {
+          if (active) ScrollTrigger.refresh();
+        });
+
+        return () => {
+          active = false;
+          observer.disconnect();
+          if (mutationFrame) window.cancelAnimationFrame(mutationFrame);
+          pendingAddedNodes.clear();
+          motionTriggers.forEach((trigger) => trigger.kill());
+          [...boundTargets].forEach(clearFrameStyles);
+          motionTriggers.clear();
+          triggerByTarget.clear();
+          boundTargets.clear();
+        };
+      },
+      scope,
+    );
+
+    let hashFrame = 0;
+    if (skipLoader) {
+      hashFrame = window.requestAnimationFrame(() => {
+        const target = document.getElementById(window.location.hash.slice(1));
+        const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        target?.scrollIntoView({ block: 'start' });
+        document.documentElement.style.scrollBehavior = previousScrollBehavior;
+        ScrollTrigger.refresh();
       });
-    };
-    const scheduleReveal = () => {
-      if (!frame) frame = window.requestAnimationFrame(revealVisibleText);
-    };
-
-    scheduleReveal();
-    window.addEventListener('scroll', scheduleReveal, { passive: true });
-    window.addEventListener('resize', scheduleReveal);
+    }
 
     return () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', scheduleReveal);
-      window.removeEventListener('resize', scheduleReveal);
+      if (hashFrame) window.cancelAnimationFrame(hashFrame);
       document.body.classList.remove('is-page-loading');
       setPageInteractive(true);
-      textTargets.forEach((target) => {
-        target.classList.remove('portfolio-text-reveal', 'is-text-visible');
-        target.style.removeProperty('--text-reveal-delay');
-      });
       media.revert();
     };
   }, [scopeRef]);

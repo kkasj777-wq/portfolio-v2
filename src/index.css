@@ -926,30 +926,20 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .hero h1 > em { will-change: transform, opacity; }
 
 
-.portfolio-text-reveal {
-  opacity: 0;
-  transform: translate3d(0,42px,0);
-  transition:
-    opacity .95s cubic-bezier(.2,.7,.2,1) var(--text-reveal-delay,0ms),
-    transform 1.18s cubic-bezier(.16,1,.3,1) var(--text-reveal-delay,0ms);
-  will-change: transform,opacity;
-}
-.portfolio-text-reveal.is-text-visible { opacity: 1; transform: translate3d(0,0,0); }
-
 .portfolio-stage .section-heading,
 .portfolio-stage .series-portals > button,
 .portfolio-stage .work-grid > article,
 .portfolio-stage .writing-feature,
-.portfolio-stage .writing-methods > article,
-.portfolio-stage .script-library-grid > article,
+.portfolio-stage .writing-methods,
+.portfolio-stage .script-library-grid > .script-card,
 .portfolio-stage .commercial-overview > *,
 .portfolio-stage .redfruit-strip > *,
 .portfolio-stage .about-layout > *,
 .portfolio-stage .experience-list > article,
-.portfolio-stage .award-strip > article,
-.portfolio-stage .strength-grid > article {
+.portfolio-stage .award-strip,
+.portfolio-stage .strength-grid > article,
+.portfolio-stage .contact-inner {
   transform-style: preserve-3d;
-  will-change: transform, opacity;
 }
 
 .section .section-heading {
@@ -1356,6 +1346,5 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   html { scroll-behavior: auto; }
   body.is-page-loading { overflow: auto; }
   .page-loader { display: none; }
-  .portfolio-text-reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

@@ -40,9 +40,10 @@ const prepareCard = (card) => {
   if (!card.querySelector(':scope > .magic-bento-glow-layer')) card.appendChild(createGlowLayer());
 };
 
-const clearCardMotion = (card) => {
+const clearCardMotion = (card, resetTransform = true) => {
   card.classList.remove('is-magic-active');
   card.style.setProperty('--magic-intensity', '0');
+  if (!resetTransform) return;
   gsap.killTweensOf(card);
   gsap.to(card, {
     x: 0,
@@ -116,6 +117,7 @@ export default function MagicBento({
     let frame = 0;
     let point = null;
     let activeCard = null;
+    const resetCardTransform = enableTilt || enableMagnetism;
 
     const cards = () => Array.from(root.querySelectorAll(CARD_SELECTOR));
     const resetCards = (except = null) => cards().forEach((card) => {
@@ -205,7 +207,7 @@ export default function MagicBento({
     const handlePointerOver = (event) => {
       const card = closestCard(root, event.target);
       if (!card || (event.relatedTarget instanceof Node && card.contains(event.relatedTarget))) return;
-      if (activeCard && activeCard !== card) clearCardMotion(activeCard);
+      if (activeCard && activeCard !== card) clearCardMotion(activeCard, resetCardTransform);
       activeCard = card;
       card.classList.add('is-magic-active');
       spawnParticles(card, event);
@@ -214,7 +216,7 @@ export default function MagicBento({
     const handlePointerOut = (event) => {
       const card = closestCard(root, event.target);
       if (!card || (event.relatedTarget instanceof Node && card.contains(event.relatedTarget))) return;
-      clearCardMotion(card);
+      clearCardMotion(card, resetCardTransform);
       activeCard = null;
     };
 
@@ -259,14 +261,14 @@ export default function MagicBento({
     const handleFocusOut = (event) => {
       const card = closestCard(root, event.target);
       if (!card || (event.relatedTarget instanceof Node && card.contains(event.relatedTarget))) return;
-      clearCardMotion(card);
+      clearCardMotion(card, resetCardTransform);
     };
 
     const handleScopeLeave = () => {
       point = null;
       resetCards();
       if (spotlight) spotlight.style.opacity = '0';
-      if (activeCard) clearCardMotion(activeCard);
+      if (activeCard) clearCardMotion(activeCard, resetCardTransform);
       activeCard = null;
     };
 
@@ -289,7 +291,6 @@ export default function MagicBento({
       root.removeEventListener('focusin', handleFocusIn);
       root.removeEventListener('focusout', handleFocusOut);
       cards().forEach((card) => {
-        gsap.killTweensOf(card);
         card.classList.remove('magic-bento-card', 'is-magic-active', 'is-magic-near');
         card.querySelector(':scope > .magic-bento-glow-layer')?.remove();
       });

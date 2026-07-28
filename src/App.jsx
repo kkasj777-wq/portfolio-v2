@@ -1488,7 +1488,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>作品集 V8.2 / © 2026 王陈鑫</span>
+          <span>作品集 V8.3 / © 2026 王陈鑫</span>
         </div>
       </div>
     </footer>
