@@ -715,6 +715,37 @@ function FlowVisibility() {
   return null;
 }
 
+function LoadingScreen() {
+  return (
+    <div className="page-loader" aria-hidden="true">
+      <div className="page-loader-panel page-loader-panel-top" />
+      <div className="page-loader-panel page-loader-panel-bottom" />
+      <div className="page-loader-grid" />
+      <div className="page-loader-content">
+        <div className="page-loader-header">
+          <span>王陈鑫作品集</span>
+          <small>2026 / 重庆</small>
+        </div>
+        <div className="page-loader-title-window">
+          <strong>王陈鑫</strong>
+        </div>
+        <div className="page-loader-role">
+          <span>导演</span>
+          <i />
+          <span>编剧</span>
+          <i />
+          <span>AI 影像创作</span>
+        </div>
+        <div className="page-loader-footer">
+          <span>作品档案加载中</span>
+          <div className="page-loader-track"><i /></div>
+          <b className="page-loader-count">00</b>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Hero({ onPlayShowreel, showreelOpen }) {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
@@ -1457,7 +1488,7 @@ function Contact() {
         <div className="contact-meta">
           <span>WECHAT / 正式发布前开放</span>
           <span>CHONGQING / REMOTE</span>
-          <span>作品集 V8.1 / © 2026 王陈鑫</span>
+          <span>作品集 V8.2 / © 2026 王陈鑫</span>
         </div>
       </div>
     </footer>
@@ -2099,6 +2130,7 @@ export default function App() {
 
   return (
     <div className="app" ref={appRef}>
+      <LoadingScreen />
       <PortfolioMotion scopeRef={appRef} />
       <ClickPulse />
       <AmbientField />
