@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+﻿import { useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import rawData from './data/works.json';
 import previewData from './data/previews.json';
@@ -15,7 +15,25 @@ const modalChromeColor = [0.035, 0.095, 0.13];
 
 const asset = (path = '') => {
   if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) return path;
-  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+  const relative = path.replace(/^\/+/, '');
+  const cdnBase = (import.meta.env.VITE_ASSET_BASE_URL || '').replace(/\/+$/, '');
+  if (cdnBase) return `${cdnBase}/${relative}`;
+  return `${import.meta.env.BASE_URL}${relative}`;
+};
+
+// When a mainland CDN is temporarily unavailable, keep the card usable and
+// fall back to the bundled placeholder instead of leaving a broken media box.
+const onMediaError = (event) => {
+  const element = event.currentTarget;
+  if (element.dataset.fallbackApplied) return;
+  element.dataset.fallbackApplied = 'true';
+  element.classList.add('media-fallback');
+  if (element.tagName === 'IMG') {
+    element.src = asset('assets/frames/tongyoulu/hero-poster.jpg');
+  } else {
+    element.removeAttribute('src');
+    element.load();
+  }
 };
 
 const featuredIds = [
@@ -779,7 +797,7 @@ function Hero({ onPlayShowreel, showreelOpen }) {
           loop
           playsInline
           poster={asset('assets/frames/tongyoulu/hero-poster.jpg')}
-        >
+         onError={onMediaError}>
           <source src={asset('assets/video/tongyoulu-hero-clean.mp4')} type="video/mp4" />
         </video>
         <div className="hero-reel-overlay" />
@@ -1115,7 +1133,7 @@ function Writing({ onSelectScript }) {
 
         <div className="writing-feature">
           <div className="writing-still">
-            <img src={asset('assets/frames/tongyoulu/ep03/frame_02.jpg')} alt="通幽录项目画面" loading="lazy" />
+            <img src={asset('assets/frames/tongyoulu/ep03/frame_02.jpg')} alt="通幽录项目画面" loading="lazy"  onError={onMediaError}/>
             <span>ORIGINAL SERIES / 2026</span>
           </div>
           <div className="writing-copy">
@@ -1247,7 +1265,7 @@ function Works({ works, onSelect }) {
           alt={work.title}
           loading="lazy"
           decoding="async"
-        />
+         onError={onMediaError}/>
         <div className="work-scan" />
         {!!work.episodes?.length && <span className="episode-badge">{work.episodes.length} EP</span>}
         <span className="view-work">VIEW CASE <ArrowIcon /></span>
@@ -1304,7 +1322,7 @@ function Works({ works, onSelect }) {
                     alt=""
                     loading="lazy"
                     decoding="async"
-                  />
+                   onError={onMediaError}/>
                   <span className="series-portal-shade" />
                   <span className="series-portal-index">SERIES / 0{seriesIndex + 1}</span>
                   <span className="series-portal-copy">
@@ -1380,7 +1398,7 @@ function Commercial({ works, onSelect }) {
 
         <div className="commercial-overview">
           <button className="commercial-lead flow-card flow-warm" type="button" onClick={() => lead && onSelect(lead)}>
-            {lead && <img src={asset(lead.thumb)} alt={lead.title} loading="lazy" decoding="async" />}
+            {lead && <img src={asset(lead.thumb)} alt={lead.title} loading="lazy" decoding="async"  onError={onMediaError}/>}
             <span className="commercial-film-grain" />
             <span className="commercial-lead-copy">
               <small>NETWORK DRAMA / DIRECTOR ASSISTANT</small>
@@ -1400,7 +1418,7 @@ function Commercial({ works, onSelect }) {
           {redFruitWorks.map((work, index) => (
             <button className="flow-card flow-warm" type="button" key={work.id} onClick={() => onSelect(work)}>
               <span className="redfruit-frame">
-                <img src={asset(work.thumb)} alt={work.title} loading="lazy" decoding="async" />
+                <img src={asset(work.thumb)} alt={work.title} loading="lazy" decoding="async"  onError={onMediaError}/>
                 <i>RF / {String(index + 1).padStart(2, '0')}</i>
               </span>
               <strong>{work.title}</strong>
@@ -1608,6 +1626,7 @@ function ShowreelModal({ onClose, returnFocus }) {
             tabIndex="0"
             onClick={togglePlayback}
             onKeyDown={onVideoKeyDown}
+            onError={onMediaError}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
@@ -1908,7 +1927,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
                       onClick={() => selectEpisode(index)}
                     >
                       <span className="episode-tab-inner">
-                        <img src={asset(episode.titleCard || episode.frames?.[0] || work.thumb)} alt="" loading="lazy" decoding="async" />
+                        <img src={asset(episode.titleCard || episode.frames?.[0] || work.thumb)} alt="" loading="lazy" decoding="async"  onError={onMediaError}/>
                         <span>EP {String(index + 1).padStart(2, '0')}</span>
                         <strong>{episode.title.replace(/^第\d+集\s*·?\s*/, '') || `第${index + 1}集`}</strong>
                       </span>
@@ -1947,6 +1966,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
                 tabIndex="0"
                 onClick={togglePlayback}
                 onKeyDown={onVideoKeyDown}
+                onError={onMediaError}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 aria-label={`${isPlaying ? '暂停' : pausedPrompt}${selectedEpisode?.title || work.title} ${previewDurationLabel}作品预览`}
@@ -2002,7 +2022,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
                   key={media.url}
                 >
                   <span className="official-media-visual">
-                    <img src={asset(media.cover)} alt={`${work.title} ${media.title}剧照`} loading="lazy" decoding="async" />
+                    <img src={asset(media.cover)} alt={`${work.title} ${media.title}剧照`} loading="lazy" decoding="async"  onError={onMediaError}/>
                     <i>{media.platform}</i>
                     <b>{media.duration}</b>
                   </span>
@@ -2068,7 +2088,7 @@ function ProjectModal({ work, onClose, returnFocus }) {
                 alt={`${work.title}${selectedEpisode ? ` ${selectedEpisode.title}` : ''} 项目画面 ${index + 1}`}
                 loading="lazy"
                 decoding="async"
-              />
+               onError={onMediaError}/>
               <figcaption>{selectedEpisode ? `EP${String(episodeIndex + 1).padStart(2, '0')} / ` : ''}{String(index + 1).padStart(2, '0')}</figcaption>
             </figure>
           ))}
@@ -2173,3 +2193,4 @@ export default function App() {
     </div>
   );
 }
+
