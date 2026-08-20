@@ -62,6 +62,7 @@ export default function LiquidChrome({
   frequencyY = 1.5,
   interactive = true,
   paused = false,
+  disableOnMobile = false,
 }) {
   const containerRef = useRef(null);
   const pausedRef = useRef(paused);
@@ -72,6 +73,7 @@ export default function LiquidChrome({
     const container = containerRef.current;
     if (!container) return undefined;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (disableOnMobile && isMobile) return undefined;
 
     const renderer = new Renderer({
       antialias: false,
@@ -137,7 +139,7 @@ export default function LiquidChrome({
       if (gl.canvas.parentNode === container) container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  }, [amplitude, baseColor, frequencyX, frequencyY, interactive, speed]);
+  }, [amplitude, baseColor, disableOnMobile, frequencyX, frequencyY, interactive, speed]);
 
   return <div ref={containerRef} className="liquid-chrome-container" />;
 }

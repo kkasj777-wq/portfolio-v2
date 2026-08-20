@@ -241,7 +241,7 @@ export default function PortfolioMotion({ scopeRef }) {
           boundTargets.delete(target);
         };
 
-        if (reduceMotion) {
+        if (reduceMotion || isMobile) {
           scope.querySelectorAll(allFrameSelector).forEach(clearFrameStyles);
           return undefined;
         }

@@ -587,17 +587,18 @@ function PortfolioStage({ children, paused = false }) {
           frequencyX={1.7}
           frequencyY={1.15}
           interactive={false}
+          disableOnMobile
           paused={paused || !isVisible || !pageVisible || reduceMotion}
         />
       </div>
       <MagicBento
         className="portfolio-stage-content"
-        enableStars
+        enableStars={!isMobile}
         enableSpotlight={false}
         enableBorderGlow
         enableTilt={false}
         enableMagnetism={false}
-        clickEffect
+        clickEffect={!isMobile}
         spotlightRadius={300}
         particleCount={7}
       >
@@ -617,6 +618,7 @@ function ModalLiquidBackdrop() {
         frequencyX={2.3}
         frequencyY={1.45}
         interactive={false}
+        disableOnMobile
       />
     </div>
   );
@@ -1774,6 +1776,21 @@ function ProjectModal({ work, onClose, returnFocus }) {
     video.play().catch(() => {
       setIsPlaying(false);
     });
+  }, [activePreview]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = videoSectionRef.current;
+    const panel = panelRef.current;
+    if (!video || !section || !panel) return undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && !video.paused) video.pause();
+      },
+      { root: panel, threshold: 0.05 },
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, [activePreview]);
 
   const gallery = useMemo(() => {

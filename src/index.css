@@ -939,6 +939,17 @@ body.modal-open .portfolio-liquid-layer .liquid-chrome-container { opacity: .2; 
 .portfolio-stage .contact-inner {
   transform-style: preserve-3d;
 }
+.portfolio-liquid-layer::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  display: none;
+  background:
+    radial-gradient(circle at 22% 24%,rgba(43,184,190,.3),transparent 34%),
+    radial-gradient(circle at 78% 72%,rgba(113,78,208,.28),transparent 38%);
+  transform: translate3d(-2%,0,0) scale(1.04);
+  animation: mobile-liquid-drift 16s ease-in-out infinite alternate;
+}
 
 .section .section-heading {
   position: relative;
@@ -1208,6 +1219,11 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .section::before,.flow-card::before,.flow-hit::before { animation: none !important; }
   .section::after { animation: none; opacity: .22; }
   .contact-orb,.contact-grid-lines { animation: none; }
+  .portfolio-liquid-layer::before { display: block; }
+  .portfolio-liquid-layer .liquid-chrome-container,
+  .modal-liquid-layer { display: none; }
+  .modal-backdrop { animation: none; backdrop-filter: none; }
+  .project-atmosphere :is(.atmo-mesh,.atmo-glow,.atmo-orbit,.atmo-scan,.atmo-mark) { animation: none !important; }
   .about .about-copy { padding: 26px; }
   .strength-grid ul { flex-wrap: wrap; }
   .project-modal { padding: 8px; }
@@ -1318,8 +1334,11 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   .about-data > div:nth-child(even) { padding-left: 0; border-left: 0; }
   .strength-grid article { min-height: 320px; padding: 26px; }
   .strength-grid h3 { margin-top: 52px; }
-  .modal-gallery { grid-template-columns: 1fr; }
-  .modal-gallery figure.is-cover { grid-column: 1; }
+  .modal-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .modal-gallery figure,
+  .modal-gallery.is-nine figure:last-child { min-height: 0; aspect-ratio: 4/3; }
+  .modal-gallery figure.is-cover { grid-column: 1 / -1; min-height: 0; aspect-ratio: 16/9; }
+  .modal-gallery figure:last-child:nth-child(even) { grid-column: 1 / -1; aspect-ratio: 16/9; }
   .modal-panel header { padding-top: 54px; }
   .modal-project-header.is-after-video { padding-top: 42px; padding-bottom: 46px; }
   .modal-project-header.is-gallery-first { min-height: 280px; }
@@ -1345,4 +1364,8 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
   body.is-page-loading { overflow: auto; }
   .page-loader { display: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@keyframes mobile-liquid-drift {
+  to { transform: translate3d(4%,-3%,0) scale(1.1); }
 }
