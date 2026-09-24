@@ -1209,6 +1209,7 @@ body.modal-open .ambient-field > span,body.modal-open main .section::before,body
 @media (max-width: 580px) {
   :root { --shell: calc(100% - 32px); }
   .section-heading h2,.contact h2 { text-wrap: balance; }
+  .contact h2 { font-size: clamp(40px,11vw,56px); }
   .contact h2 em { display: inline-block; width: 100%; }
   .page-loader-content { width: calc(100vw - 32px); }
   .page-loader-grid { background-size: 60px 60px; }

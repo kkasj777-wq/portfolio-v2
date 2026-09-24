@@ -97,7 +97,7 @@ const projectSlogans = {
   shoudian: '有些光照亮石刻，也照见父子之间没有说出口的话。',
   tongyoulu: '若世间无人记得你，就去问精怪与山城。',
   maimai: '每一块面包，都替一个小小心愿施法。',
-  xindong: '心动不是意外，是勇气终于按下发送键。',
+  xindong: '心动，在按下发送键的那一刻。',
   jinyan: '当语言被夺走，沉默开始作证。',
   mufeng: '追着风走，才听见人物心里的方向。',
   qishuku: '被丢弃的书，也在等一个守门人。',
@@ -118,7 +118,7 @@ const projectSlogans = {
   img_taoyi: '泥土经过手，才有自己的呼吸。',
   img_taoyi_man: '当陶土进入漫画，手艺也有了角色。',
   img_zhanban: '把非遗讲清楚，也让它一眼被记住。',
-  img_long: '龙不是符号，是不断生长的线。',
+  img_long: '龙纹从线条里长出来。',
   img_long_world: '从一条龙纹，打开一个想象世界。',
   photo_night: '城市睡着以后，光开始说话。',
   photo_nature: '把风景留在它最接近呼吸的一秒。',
@@ -177,7 +177,7 @@ const episodeStoryData = {
       synopsis: '小猫牵挂住在池塘里的小鱼泡泡。麦麦做出小鱼面包，让一句没来得及说完的想念有机会沿着水面抵达朋友。',
     },
     {
-      slogan: '柔软不是退缩，是让心愿有地方降落。',
+      slogan: '云朵面包托住心愿，也托住小兔迈出的一步。',
       synopsis: '小兔带着难以说出口的愿望来到面包店。云朵面包托起它的勇气，也帮助它跨过眼前的阻碍，把心里话送到最想念的人身边。',
     },
     {
@@ -222,10 +222,10 @@ const episodeStoryData = {
     },
     {
       slogan: '房子会变出来，安心要自己住进去。',
-      synopsis: '小猴渴望拥有一间真正属于自己的小屋。房屋面包搭起奇妙空间，也让它理解“家”不只是墙壁，更是愿意停下来的安全感。',
+      synopsis: '小猴渴望拥有一间真正属于自己的小屋。房屋面包搭起奇妙空间；房子有了墙壁，还需要能让它安心停下来的感觉。',
     },
     {
-      slogan: '勇气不是不害怕，是带着星光再走一步。',
+      slogan: '小狐狸带着害怕与星光，向前走了一步。',
       synopsis: '小狐狸面对未知总想后退。勇气面包点亮尾巴上的星形印记，让它带着仍然存在的害怕，主动迈出下一步。',
     },
     {
@@ -828,7 +828,7 @@ function Hero({ onPlayShowreel, showreelOpen }) {
         <p className="hero-role">导演 <i>/</i> 编剧 <i>/</i> AI 影像创作者</p>
         <p className="hero-intro">
           从人物动机与文学剧本出发，把故事拆解为能够被执行的镜头。<br />
-          用导演思维驾驭 AI，而不是让技术替代叙事。
+          AI 用于镜头生成，故事的取舍仍由我完成。
         </p>
         <div className="hero-actions">
           <StarBorder
@@ -1129,8 +1129,8 @@ function Writing({ onSelectScript }) {
         <SectionHeading
           index="02"
           eyebrow="SCREENWRITING / STORY DEVELOPMENT"
-          title="编剧不是填满对白，而是设计选择与代价。"
-          description="从人物和世界规则出发，建立能够支撑系列化创作、也能够真正落到镜头里的剧本。"
+          title="剧本里的选择与代价"
+          description="从人物和世界规则写起，完成能支撑系列创作并用于镜头拆解的剧本。"
         />
 
         <div className="writing-feature">
@@ -1288,7 +1288,7 @@ function Works({ works, onSelect }) {
         <SectionHeading
           index="01"
           eyebrow="SELECTED WORK / COMPLETE ARCHIVE"
-          title="先看代表作，再进入完整作品档案。"
+          title="代表作与完整档案"
           description={`精选导演项目在前，全部 ${works.length} 项作品在后。系列项目可逐集查看独立内容与画面。`}
         />
 
@@ -1394,8 +1394,8 @@ function Commercial({ works, onSelect }) {
         <SectionHeading
           index="03"
           eyebrow="COMMERCIAL PRACTICE / ON-SET ARCHIVE"
-          title="商业实战，不藏在导演作品后面。"
-          description="网络剧与红果短剧片场履历独立呈现，保留项目、岗位和幕后材料，不把参与项目误写成个人导演成绩。"
+          title="商业项目与片场记录"
+          description="网络剧与红果短剧按项目、岗位和幕后材料归档，清楚标注实际承担的职责。"
         />
 
         <div className="commercial-overview">
@@ -1502,7 +1502,7 @@ function Contact() {
       <div className="contact-grid-lines" />
       <div className="page-shell contact-inner">
         <span className="eyebrow">联系合作</span>
-        <h2>故事已经开始。<br /><em>下一镜，一起完成。</em></h2>
+        <h2>有项目想聊？<br /><em>发邮件给我。</em></h2>
         <p>原创剧本 · 剧情短片 · AI 系列剧 · 商业短剧</p>
         <a className="contact-email flow-hit" href="mailto:3146652776@qq.com" aria-label="发送邮件至 3146652776@qq.com">EMAIL / 3146652776@qq.com</a>
         <div className="contact-meta">
