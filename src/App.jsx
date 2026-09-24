@@ -962,7 +962,7 @@ function ScriptModal({ script, onClose, returnFocus }) {
       }
       if (event.key !== 'Tab') return;
       const focusable = [...(modalRef.current?.querySelectorAll(
-        'button:not([disabled]), [href], [tabindex="0"]',
+        'button:not([disabled]):not([tabindex="-1"]), [href]:not([tabindex="-1"]), [tabindex="0"]',
       ) || [])].filter((element) => element.getClientRects().length > 0);
       if (!focusable.length) return;
       const first = focusable[0];
